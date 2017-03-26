@@ -7,10 +7,11 @@ public class Test
 {
   public Test()
   {
-    createDatabase();
+    initializeEntities();
+    createEnvironment();
   }
 
-  private void createDatabase()
+  private void initializeEntities()
   {
     // TODO create testEntities here
   }

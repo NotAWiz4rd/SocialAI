@@ -21,7 +21,8 @@ public class GuiManager
 
   private void initializeMainWindow()
   {
-    mainWindow = new JFrame("MainWindow v" + version);
+    mainWindow = new MainFrame();
+    mainWindow.setTitle("MainWindow v" + version);
     mainWindow.setSize(500, 500);
     mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     mainWindow.setVisible(true);
