@@ -11,15 +11,17 @@ import javax.swing.WindowConstants;
 public class GuiManager
 {
   private JFrame mainWindow;
+  private String version;
 
-  public GuiManager()
+  public GuiManager(String m_version)
   {
+    version = m_version;
     initializeMainWindow();
   }
 
   private void initializeMainWindow()
   {
-    mainWindow = new JFrame("MainWindow");
+    mainWindow = new JFrame("MainWindow v" + version);
     mainWindow.setSize(500, 500);
     mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     mainWindow.setVisible(true);

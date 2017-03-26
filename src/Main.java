@@ -5,8 +5,10 @@ import GUI.GuiManager;
  */
 public class Main
 {
+  private static String VERSION = "0.0.1";
+
   public static void main(String[] args)
   {
-    GuiManager guiManager = new GuiManager();
+    GuiManager guiManager = new GuiManager(VERSION);
   }
 }
