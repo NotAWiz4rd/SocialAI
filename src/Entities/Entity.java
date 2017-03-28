@@ -8,6 +8,7 @@ package Entities;
 public class Entity
 {
   private int id;
+  private Location location;
 
   public Entity()
   {
@@ -22,5 +23,15 @@ public class Entity
   public void setId(int id)
   {
     this.id = id;
+  }
+
+  public Location getLocation()
+  {
+    return location;
+  }
+
+  public void setLocation(Location location)
+  {
+    this.location = location;
   }
 }
