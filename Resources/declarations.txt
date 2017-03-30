@@ -1,0 +1,11 @@
+properties{
+{name:'blonde hair'
+id: 'blondhair'}
+}
+
+
+opinions{
+{property: 'blondhair'
+impact: '17'
+personalLevel: '0'}
+}
