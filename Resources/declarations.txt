@@ -9,3 +9,7 @@ opinions{
 impact: '17'
 personalLevel: '0'}
 }
+
+definition of an event:
+- ein zu einem bestimmten Zeitpunkt stattfindende Aktion einer Entität mit der möglichen Involvierung einer oder mehrerer
+weiteren Entitäten.

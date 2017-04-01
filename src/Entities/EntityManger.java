@@ -27,11 +27,13 @@ public class EntityManger
     return locations;
   }
 
-  public Entity getEntity(int index){
+  public Entity getEntity(int index)
+  {
     return entities.get(index);
   }
 
-  public int getEntityCount(){
+  public int getEntityCount()
+  {
     return entities.size();
   }
 }
