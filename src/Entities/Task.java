@@ -5,4 +5,12 @@ package Entities;
  */
 public class Task
 {
+  private boolean isCancelable;
+  private int priority;
+  private Action action;
+
+  public Task()
+  {
+  }
+
 }

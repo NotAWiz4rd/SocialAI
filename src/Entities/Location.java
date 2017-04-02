@@ -5,30 +5,23 @@ package Entities;
  */
 public class Location
 {
-  private int x;
-  private int y;
+  private String id;
+  private int[] x;
+  private int[] y;
+  private int z;
 
-  public Location(){
+  public Location()
+  {
 
   }
 
-  public int getX()
+  public String getId()
   {
-    return x;
+    return id;
   }
 
-  public void setX(int x)
+  public void setId(String id)
   {
-    this.x = x;
-  }
-
-  public int getY()
-  {
-    return y;
-  }
-
-  public void setY(int y)
-  {
-    this.y = y;
+    this.id = id;
   }
 }
