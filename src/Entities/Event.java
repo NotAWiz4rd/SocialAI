@@ -9,7 +9,7 @@ public class Event
   private Entity subject;
   private Entity object;
   private Location location;
-  private Action[] actons;
+  private Action[] actions;
   private int timeStamp;
 
   public Event()
@@ -49,12 +49,12 @@ public class Event
 
   public Action[] getActons()
   {
-    return actons;
+    return actions;
   }
 
   public void setActons(Action[] actons)
   {
-    this.actons = actons;
+    this.actions = actons;
   }
 
   public int getTimeStamp()
