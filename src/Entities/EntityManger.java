@@ -15,16 +15,31 @@ public class EntityManger
   {
   }
 
-  public Location[] getEntityLocations()
+  public void addEntity(Entity entity)
   {
-    Location[] locations = new Location[entities.size()];
+    entities.add(entity);
+  }
+
+  public Position[] getEntityLocations()
+  {
+    Position[] positions = new Position[entities.size()];
 
     for(int i = 0; i < entities.size(); i++)
     {
-      locations[i] = entities.get(i).getLocation();
+      positions[i] = entities.get(i).getPosition();
     }
 
-    return locations;
+    return positions;
+  }
+
+
+  // indexes all entities. this should only be called once and only when all entities are added to the manager
+  public void indexEntities()
+  {
+    for(int i = 0; i < entities.size(); i++)
+    {
+      entities.get(i).setId(i);
+    }
   }
 
   public Entity getEntity(int index)

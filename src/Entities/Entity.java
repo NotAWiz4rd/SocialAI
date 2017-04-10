@@ -8,11 +8,11 @@ package Entities;
 public class Entity
 {
   private int id;
-  private Location location;
+  private Position position;
 
-  public Entity()
+  public Entity(Position m_position)
   {
-
+    position = m_position;
   }
 
   public int getId()
@@ -25,13 +25,13 @@ public class Entity
     this.id = id;
   }
 
-  public Location getLocation()
+  public Position getPosition()
   {
-    return location;
+    return position;
   }
 
-  public void setLocation(Location location)
+  public void setPosition(Position position)
   {
-    this.location = location;
+    this.position = position;
   }
 }

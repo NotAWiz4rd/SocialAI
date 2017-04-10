@@ -1,4 +1,15 @@
 people{
-{
+{name: 'Cengiz'
+age: '18'
+properties{
+'blondhair'
+}
+opinions{
+ {
+ property: 'blondhair'
+ impact: '17'
+ personalLevel: '0'
+ }
+}
 }
 }

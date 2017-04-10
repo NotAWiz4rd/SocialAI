@@ -1,0 +1,8 @@
+objects{
+ {
+  id: 'laptop'
+  properties: {
+  'fancy', 'playmusic'
+  }
+ }
+}
