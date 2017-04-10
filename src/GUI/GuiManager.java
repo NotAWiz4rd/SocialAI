@@ -1,6 +1,6 @@
 package GUI;
 
-import Entities.EntityManger;
+import Managers.EntityManger;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;

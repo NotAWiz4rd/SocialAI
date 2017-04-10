@@ -1,4 +1,8 @@
-package Entities;
+package Managers;
+
+import Entities.Location;
+import Entities.Requirement;
+import Entities.Task;
 
 import java.util.ArrayList;
 

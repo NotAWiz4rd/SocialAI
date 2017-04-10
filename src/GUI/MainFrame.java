@@ -1,6 +1,6 @@
 package GUI;
 
-import Entities.EntityManger;
+import Managers.EntityManger;
 import Entities.Location;
 
 import javax.swing.JFrame;

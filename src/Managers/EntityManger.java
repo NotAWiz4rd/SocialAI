@@ -1,4 +1,7 @@
-package Entities;
+package Managers;
+
+import Entities.Entity;
+import Entities.Position;
 
 import java.util.ArrayList;
 

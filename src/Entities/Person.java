@@ -1,5 +1,7 @@
 package Entities;
 
+import Managers.TaskManager;
+
 import java.util.ArrayList;
 
 /**
