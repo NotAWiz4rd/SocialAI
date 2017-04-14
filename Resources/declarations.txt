@@ -9,4 +9,4 @@ weiteren Entitäten und einem bestimmten Radius.
 
 
 
-requirement: subject location shop radius 5
+requirement: location/position objectID radius 5

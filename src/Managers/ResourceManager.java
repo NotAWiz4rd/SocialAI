@@ -5,35 +5,48 @@ package Managers;
  */
 public class ResourceManager
 {
-  public ResourceManager(){
+  public ResourceManager()
+  {
 
   }
 
-  public void loadResources(){
+  public void loadResources()
+  {
     loadLocations();
     loadProperties();
     loadObjects();
     loadActions();
+    loadNeeds();
     loadPeople();
   }
 
-  private void loadLocations(){
+  private void loadLocations()
+  {
 
   }
 
-  private void loadProperties(){
+  private void loadProperties()
+  {
 
   }
 
-  private void loadObjects(){
+  private void loadObjects()
+  {
 
   }
 
-  private void loadActions(){
+  private void loadActions()
+  {
 
   }
 
-  private void loadPeople(){
+  private void loadNeeds()
+  {
+
+  }
+
+  private void loadPeople()
+  {
 
   }
 }

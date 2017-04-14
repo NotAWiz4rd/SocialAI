@@ -11,6 +11,7 @@ public class Object
   private String name;
   private String objectID; // identifies the object from the object database
   private ArrayList<Property> hasProperties;
+  private boolean isCurrentlyUsed;
 
   public Object(Position position)
   {
@@ -45,5 +46,15 @@ public class Object
   public void setHasProperties(ArrayList<Property> hasProperties)
   {
     this.hasProperties = hasProperties;
+  }
+
+  public boolean isCurrentlyUsed()
+  {
+    return isCurrentlyUsed;
+  }
+
+  public void setCurrentlyUsed(boolean currentlyUsed)
+  {
+    isCurrentlyUsed = currentlyUsed;
   }
 }

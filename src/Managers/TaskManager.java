@@ -1,6 +1,6 @@
 package Managers;
 
-import Entities.Location;
+import Entities.Position;
 import Entities.Requirement;
 import Entities.Task;
 
@@ -24,7 +24,7 @@ public class TaskManager
 
   }
 
-  private boolean checkLocation(Location x, Location y, int radius){
+  private boolean checkPosition(Position position,  int radius){
     return false;
   }
 }

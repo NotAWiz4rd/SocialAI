@@ -1,5 +1,15 @@
 actions{
  {
-
+  id: "sleep"
+  isMultitaskable: "false"
+  satisfyNeeds {
+   id: "sleep"
+   value: "75";
+   id: "fun"
+   value: "10"
+  }
+  requirements {
+   "position bed radius 5"
+  }
  }
 }
