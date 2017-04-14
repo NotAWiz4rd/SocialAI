@@ -1,15 +1,18 @@
-people{
-{name: 'Cengiz'
-age: '18'
-properties{
-'blondhair'
-}
-opinions{
+people
+{
  {
- property: 'blondhair'
- impact: '17'
- personalLevel: '0'
+  name: 'Cengiz'
+  age: '18'
+  properties{
+  'blondhair'
  }
-}
-}
+ opinions
+  {
+   {
+    property: 'blondhair'
+    impact: '17'
+    personalLevel: '0'
+   }
+  }
+ }
 }

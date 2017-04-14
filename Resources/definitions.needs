@@ -1,7 +1,8 @@
-needs{
+needs
 {
-id: "fun"
-name: "Fun"
-description: "Represents the general fun-level of a person. A person gets grumpy if their fun is too low."
-}
+ {
+  id: "fun"
+  name: "Fun"
+  description: "Represents the general fun-level of a person. A person gets grumpy if their fun is too low."
+ }
 }

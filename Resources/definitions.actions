@@ -1,14 +1,17 @@
-actions{
+actions
+{
  {
   id: "sleep"
   isMultitaskable: "false"
-  satisfyNeeds {
+  satisfyNeeds
+  {
    id: "sleep"
    value: "75";
    id: "fun"
    value: "10"
   }
-  requirements {
+  requirements
+  {
    "position bed radius 5"
   }
  }

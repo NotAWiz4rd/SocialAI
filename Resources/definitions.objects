@@ -1,8 +1,10 @@
-objects{
+objects
+{
  {
   id: 'laptop'
-  properties: {
-  'fancy', 'playmusic'
+  properties:
+  {
+   'fancy', 'playmusic'
   }
  }
 }
