@@ -10,9 +10,11 @@ public class Location
   private int[] y;
   private int z;
 
-  public Location()
-  {
+  // TODO define this as a proper Location, e.g. a school or a shop. Also give it a groupID, for shops and co
 
+  public Location(String m_id)
+  {
+    id = m_id;
   }
 
   public String getId()

@@ -10,12 +10,17 @@ public class Object
 {
   private String name;
   private String objectID; // identifies the object from the object database
-  private ArrayList<Property> hasProperties;
+  private String groupID; // a group ID for beds, toilets, etc.
+  private ArrayList<Property> hasProperties; // TODO evaluate if this really has to be an ArrayList and may not be a simple array
   private boolean isCurrentlyUsed;
 
-  public Object(Position position)
+  public Object(String m_name, String m_objectID, String m_groupID, Position position, boolean m_isCurrentlyUsed)
   {
     super(position);
+    name = m_name;
+    objectID = m_objectID;
+    groupID = m_groupID;
+    isCurrentlyUsed = m_isCurrentlyUsed;
   }
 
   public String getName()
@@ -56,5 +61,15 @@ public class Object
   public void setCurrentlyUsed(boolean currentlyUsed)
   {
     isCurrentlyUsed = currentlyUsed;
+  }
+
+  public String getGroupID()
+  {
+    return groupID;
+  }
+
+  public void setGroupID(String groupID)
+  {
+    this.groupID = groupID;
   }
 }

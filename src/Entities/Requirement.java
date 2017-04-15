@@ -5,21 +5,43 @@ package Entities;
  */
 public class Requirement
 {
-  private String actionId;
+  private String actionID;
   private String requirementString;
 
-  public Requirement()
+  public Requirement(String m_actionID, String m_requirementString)
   {
-
+    actionID = m_actionID;
+    requirementString = m_requirementString;
   }
 
   public boolean checkRequirement()
   {
+    // check everything here
     return false;
   }
 
-  private void decodeRequirement(){
+  private void decodeRequirement()
+  {
 
   }
-  // check everything here
+
+  public String getActionID()
+  {
+    return actionID;
+  }
+
+  public void setActionID(String actionID)
+  {
+    this.actionID = actionID;
+  }
+
+  public String getRequirementString()
+  {
+    return requirementString;
+  }
+
+  public void setRequirementString(String requirementString)
+  {
+    this.requirementString = requirementString;
+  }
 }

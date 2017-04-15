@@ -1,8 +1,9 @@
 package GUI;
 
-import Managers.EntityManger;
+import Managers.PersonManager;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  * Created by NotAWiz4rd on 27.03.2017.
@@ -12,14 +13,21 @@ import javax.swing.JFrame;
 public class DebugPanel
   extends JFrame
 {
-  private EntityManger entityManager;
+  private PersonManager personManager;
 
-  public DebugPanel(EntityManger m_entityManger)
+  public DebugPanel(PersonManager m_personManager)
   {
-    entityManager = m_entityManger;
+    personManager = m_personManager;
   }
 
-  private void loadEntities(){
+  private void loadEntities()
+  {
+    JLabel entity = new JLabel("BLA");
+    add(entity);
+  }
 
+  public void reload()
+  {
+    // TODO check what has changed and only change those values
   }
 }

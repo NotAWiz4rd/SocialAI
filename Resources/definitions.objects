@@ -1,7 +1,13 @@
+object-groups
+{
+ 'bed', 'toilet'
+}
+
 objects
 {
  {
   id: 'laptop'
+  group-id: ''
   properties:
   {
    'fancy', 'playmusic'

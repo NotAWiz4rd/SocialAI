@@ -1,5 +1,7 @@
 package Entities;
 
+import Enums.Sex;
+import Enums.Stance;
 import Managers.TaskManager;
 
 import java.util.ArrayList;
@@ -13,9 +15,10 @@ public class Person
 {
   private static String name;
   private int age;
-  private static String sex; // male or female
+  private static Sex sex; // male or female
   private static int height; // actual height of the person when standing up in cm
   private Attributes attributes;
+  private ArrayList<Object> inventory = new ArrayList<>();
 
   private Stance stance;
 
@@ -26,13 +29,17 @@ public class Person
   private TaskManager taskManager;
 
 
-  public Person(String m_name, int m_age, String m_sex, Position position, int m_height)
+  public Person(String m_name, int m_age, Sex m_sex, Position position, int m_height, int[] m_attributes)
   {
     super(position);
     name = m_name;
     age = m_age;
     sex = m_sex;
     height = m_height;
+
+    attributes = new Attributes(m_attributes[0], m_attributes[1], m_attributes[2], m_attributes[3], m_attributes[4]);
+
+    stance = Stance.STANDING;
   }
 
   public int getCurrentSize()
@@ -49,6 +56,11 @@ public class Person
         return 30;
     }
     return -1;
+  }
+
+  public void move()
+  {
+    // TODO implement a random move function
   }
 
   public Stance getStance()
@@ -81,7 +93,7 @@ public class Person
     this.age = age;
   }
 
-  public String getSex()
+  public Sex getSex()
   {
     return sex;
   }
@@ -92,7 +104,3 @@ public class Person
   }
 }
 
-enum Stance
-{
-  LYING, STANDING, SITTING, DUCKING
-}

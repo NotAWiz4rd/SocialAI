@@ -9,9 +9,11 @@ public class Position
   private int y;
   private int z;
 
-  public Position()
+  public Position(int m_x, int m_y, int m_z)
   {
-
+    x = m_x;
+    y = m_y;
+    z = m_z;
   }
 
   public int getX()

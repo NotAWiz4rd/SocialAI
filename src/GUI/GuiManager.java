@@ -1,8 +1,8 @@
 package GUI;
 
-import Managers.EntityManger;
+import Managers.PersonManager;
+import Testing.Test;
 
-import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -15,42 +15,44 @@ import java.net.URL;
 // This is the Base Class from where the GUI is managed
 public class GuiManager
 {
-  private JFrame mainWindow;
-  private JFrame debugPanel;
+  private MainFrame mainFrame;
+  private DebugPanel debugPanel;
   private String version;
-  private EntityManger entityManger = new EntityManger();
+  private PersonManager personManager = new PersonManager();
   private Image iconImage;
 
   public GuiManager(String m_version)
   {
     version = m_version;
     getIconImage();
+    Test test = new Test(personManager);
     initializeMainWindow();
     initializeDebugPanel();
+    mainFrame.reload();
   }
 
   private void initializeMainWindow()
   {
-    mainWindow = new MainFrame(entityManger);
-    mainWindow.setTitle("MainWindow v" + version);
-    mainWindow.setSize(1000, 1000);
-    mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    mainWindow.setResizable(true);
-    mainWindow.setVisible(true);
+    mainFrame = new MainFrame(personManager);
+    mainFrame.setTitle("MainWindow v" + version);
+    mainFrame.setSize(1000, 1000);
+    mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    mainFrame.setResizable(true);
+    mainFrame.setVisible(true);
 
     if(iconImage != null)
     {
-      mainWindow.setIconImage(iconImage);
+      mainFrame.setIconImage(iconImage);
     }
   }
 
   private void initializeDebugPanel()
   {
-    debugPanel = new DebugPanel(entityManger);
+    debugPanel = new DebugPanel(personManager);
     debugPanel.setTitle("DebugPanel v" + version);
     debugPanel.setSize(500, 1000);
     debugPanel.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-    mainWindow.setResizable(false);
+    debugPanel.setResizable(false);
     debugPanel.setVisible(true);
 
     if(iconImage != null)
@@ -64,6 +66,12 @@ public class GuiManager
     URL url = ClassLoader.getSystemResource("sai-icon.png");
     Toolkit kit = Toolkit.getDefaultToolkit();
     iconImage = kit.createImage(url);
+  }
+
+  public void reload()
+  {
+    debugPanel.reload();
+    mainFrame.reload();
   }
 
 }

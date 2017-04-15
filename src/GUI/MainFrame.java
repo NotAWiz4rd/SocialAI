@@ -1,7 +1,7 @@
 package GUI;
 
 import Entities.Position;
-import Managers.EntityManger;
+import Managers.PersonManager;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,22 +12,20 @@ import javax.swing.JPanel;
 public class MainFrame
   extends JFrame
 {
-  private EntityManger entityManger;
+  private PersonManager personManager;
   private JPanel[] entities;
 
-  public MainFrame(EntityManger m_entityManager)
+  public MainFrame(PersonManager m_personManager)
   {
-    entityManger = m_entityManager;
+    personManager = m_personManager;
     setLayout(null);
-    entities = new JPanel[entityManger.getEntityCount()];
+    entities = new JPanel[personManager.getPersonCount()];
+    initializeEntities();
   }
 
   private void displayEntities()
   {
-    /* TODO display entities from entityManager
-    this should only need their position
-     */
-    Position[] positions = entityManger.getEntityPositions();
+    Position[] positions = personManager.getEntityPositions();
     for(int i = 0; i < positions.length; i++)
     {
       entities[i].setLocation(positions[i].getX(), positions[i].getY());
@@ -45,6 +43,12 @@ public class MainFrame
     {
       entities[i] = new JPanel();
       entities[i].setSize(2, 2);
+      add(entities[i]);
     }
+  }
+
+  public void reload()
+  {
+    displayEntities();
   }
 }

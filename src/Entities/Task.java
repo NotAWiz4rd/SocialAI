@@ -7,10 +7,12 @@ public class Task
 {
   private boolean isCancelable;
   private int priority;
-  private Action action;
+  private Action action;  // TODO evaluate if this should be an Array to be able to make complex tasks
 
-  public Task()
+  public Task(boolean m_isCancelable, int m_priority)
   {
+    isCancelable = m_isCancelable;
+    priority = m_priority;
   }
 
   public boolean isCancelable()
