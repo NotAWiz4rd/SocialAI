@@ -18,4 +18,8 @@ public class DebugPanel
   {
     entityManager = m_entityManger;
   }
+
+  private void loadEntities(){
+
+  }
 }

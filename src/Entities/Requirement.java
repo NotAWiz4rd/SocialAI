@@ -6,7 +6,7 @@ package Entities;
 public class Requirement
 {
   private String actionId;
-  private String requirementString = "location ";
+  private String requirementString;
 
   public Requirement()
   {

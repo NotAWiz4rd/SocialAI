@@ -13,4 +13,33 @@ public class Task
   {
   }
 
+  public boolean isCancelable()
+  {
+    return isCancelable;
+  }
+
+  public void setCancelable(boolean cancelable)
+  {
+    isCancelable = cancelable;
+  }
+
+  public int getPriority()
+  {
+    return priority;
+  }
+
+  public void setPriority(int priority)
+  {
+    this.priority = priority;
+  }
+
+  public Action getAction()
+  {
+    return action;
+  }
+
+  public void setAction(Action action)
+  {
+    this.action = action;
+  }
 }

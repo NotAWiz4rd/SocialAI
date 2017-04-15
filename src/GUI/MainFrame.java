@@ -1,7 +1,7 @@
 package GUI;
 
+import Entities.Position;
 import Managers.EntityManger;
-import Entities.Location;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -25,12 +25,12 @@ public class MainFrame
   private void displayEntities()
   {
     /* TODO display entities from entityManager
-    this should only need their location
+    this should only need their position
      */
-    Location[] locations = entityManger.getEntityLocations();
-    for(int i = 0; i < locations.length; i++)
+    Position[] positions = entityManger.getEntityPositions();
+    for(int i = 0; i < positions.length; i++)
     {
-      entities[i].setLocation(locations[i].getX(), locations[i].getY());
+      entities[i].setLocation(positions[i].getX(), positions[i].getY());
     }
   }
 

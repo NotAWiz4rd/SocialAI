@@ -23,7 +23,7 @@ public class EntityManger
     entities.add(entity);
   }
 
-  public Position[] getEntityLocations()
+  public Position[] getEntityPositions()
   {
     Position[] positions = new Position[entities.size()];
 
