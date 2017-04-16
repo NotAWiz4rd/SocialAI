@@ -12,7 +12,84 @@ actions
   }
   requirements
   {
-   "position bed radius 5"
+   "position #sleepspot radius 2"
+  }
+ }
+ {
+  id: "eat"
+  isMultitaskable: "true"
+  satisfyNeeds
+  {
+   id: "hunger"
+   value: "75";
+  }
+  requirements
+  {
+   "position #food radius 2"
+  }
+ }
+ {
+  id: "read"
+  isMultitaskable: "false"
+  satisfyNeeds
+  {
+   id: "fun"
+   value: "20";
+  }
+  requirements
+  {
+   "position #book radius 2"
+  }
+ }
+ {
+  id: "drink"
+  isMultitaskable: "true"
+  satisfyNeeds
+  {
+   id: "thirst"
+   value: "40";
+  }
+  requirements
+  {
+   "position #drinkable radius 2"
+  }
+ }
+ {
+  id: "goto"
+  isMultitaskable: "true"
+  satisfyNeeds
+  {
+   id: "null"
+   value: "0";
+  }
+  requirements
+  {}
+ }
+ {
+  id: "talkto"
+  isMultitaskable: "true"
+  satisfyNeeds
+  {
+   id: "sociality"
+   value: "15";
+  }
+  requirements
+  {
+   "position #person radius 5"
+  }
+ }
+ {
+  id: "write"
+  isMultitaskable: "true"
+  satisfyNeeds
+  {
+   id: "null"
+   value: "0";
+  }
+  requirements
+  {
+   "position #writable radius 2"
+   "position #writable radius 2"
   }
  }
 }
