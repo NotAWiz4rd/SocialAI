@@ -8,6 +8,10 @@ public class RuntimeManager
   // this class runs the simulation in ticks. It makes sure everything gets updated properly
   // 1 tick = 1 second
 
+  private ResourceManager resourceManager = new ResourceManager();
+  PersonManager personManager = new PersonManager();
+  ObjectManager objectManager = new ObjectManager();
+
   private boolean isRunning = false;
 
   public RuntimeManager()
