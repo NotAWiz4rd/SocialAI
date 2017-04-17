@@ -3,6 +3,9 @@ people
  {
   name: 'Cengiz'
   age: '18'
+  sex: 'male'
+  height: '183'
+  workplace: 'school_1'
   properties
   {
    'blondhair'

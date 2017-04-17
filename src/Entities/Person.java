@@ -18,6 +18,7 @@ public class Person
   private static Sex sex; // male or female
   private static int height; // actual height of the person when standing up in cm
   private Attributes attributes;
+  private String workplaceID; // this is the locationID for the persons workplace
   private ArrayList<Object> inventory = new ArrayList<>();
 
   private Stance stance;
