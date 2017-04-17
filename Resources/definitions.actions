@@ -92,4 +92,17 @@ actions
    "position #writable radius 2"
   }
  }
+ {
+  id: "work"
+  isMultitaskable: "true"
+  satisfyNeeds
+  {
+   id: "null"
+   value: "0";
+  }
+  requirements
+  {
+   "location $workplace"
+  }
+ }
 }
