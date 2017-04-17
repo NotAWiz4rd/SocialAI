@@ -9,8 +9,8 @@ public class RuntimeManager
   // 1 tick = 1 second
 
   private ResourceManager resourceManager = new ResourceManager();
-  PersonManager personManager = new PersonManager();
-  ObjectManager objectManager = new ObjectManager();
+  public PersonManager personManager = new PersonManager();
+  public ObjectManager objectManager = new ObjectManager();
 
   private boolean isRunning = false;
 

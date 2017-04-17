@@ -1,6 +1,6 @@
 package GUI;
 
-import Managers.PersonManager;
+import Managers.RuntimeManager;
 import Testing.Test;
 
 import javax.swing.WindowConstants;
@@ -18,14 +18,14 @@ public class GuiManager
   private MainFrame mainFrame;
   private DebugPanel debugPanel;
   private String version;
-  private PersonManager personManager = new PersonManager();
+  private RuntimeManager runtimeManager = new RuntimeManager();
   private Image iconImage;
 
   public GuiManager(String m_version)
   {
     version = m_version;
     getIconImage();
-    Test test = new Test(personManager);
+    Test test = new Test(runtimeManager.personManager);
     initializeMainWindow();
     initializeDebugPanel();
     mainFrame.reload();
@@ -33,7 +33,7 @@ public class GuiManager
 
   private void initializeMainWindow()
   {
-    mainFrame = new MainFrame(personManager);
+    mainFrame = new MainFrame(runtimeManager.personManager);
     mainFrame.setTitle("MainWindow v" + version);
     mainFrame.setSize(1000, 1000);
     mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -48,7 +48,7 @@ public class GuiManager
 
   private void initializeDebugPanel()
   {
-    debugPanel = new DebugPanel(personManager);
+    debugPanel = new DebugPanel(runtimeManager.personManager);
     debugPanel.setTitle("DebugPanel v" + version);
     debugPanel.setSize(500, 1000);
     debugPanel.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);

@@ -24,7 +24,7 @@ public class PersonManager
     people.add(person);
   }
 
-  public Position[] getEntityPositions()
+  public Position[] getPeoplePositions()
   {
     Position[] positions = new Position[people.size()];
 

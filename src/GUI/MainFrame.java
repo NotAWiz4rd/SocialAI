@@ -25,7 +25,7 @@ public class MainFrame
 
   private void displayEntities()
   {
-    Position[] positions = personManager.getEntityPositions();
+    Position[] positions = personManager.getPeoplePositions();
     for(int i = 0; i < positions.length; i++)
     {
       entities[i].setLocation(positions[i].getX(), positions[i].getY());

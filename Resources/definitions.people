@@ -3,10 +3,11 @@ people
  {
   name: 'Cengiz'
   age: '18'
-  properties{
-  'blondhair'
- }
- opinions
+  properties
+  {
+   'blondhair'
+  }
+  opinions
   {
    {
     property: 'blondhair'
