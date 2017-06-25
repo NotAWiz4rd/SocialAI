@@ -1,16 +1,27 @@
 object-groups
 {
- 'bed', 'toilet'
+ 'sleepspot', 'food', 'readable', 'drinkable'
 }
 
 objects
 {
  {
-  id: 'laptop'
-  group-id: ''
+  id: 'apple'
+  group-id: 'food'
   properties:
   {
    'fancy', 'playmusic'
   }
+ }
+ {
+  id: 'whisky'
+  group-id: 'drinkable'
+  properties:
+  {
+
+  }
+ }
+ {
+
  }
 }

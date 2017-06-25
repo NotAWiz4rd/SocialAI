@@ -38,7 +38,7 @@ actions
   }
   requirements
   {
-   "position #book radius 2"
+   "position #readable radius 2"
   }
  }
  {
@@ -88,7 +88,6 @@ actions
   }
   requirements
   {
-   "position #writable radius 2"
    "position #writable radius 2"
   }
  }

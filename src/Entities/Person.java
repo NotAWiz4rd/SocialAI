@@ -13,10 +13,10 @@ import Managers.TaskManager;
 public class Person
   extends Entity
 {
-  private static String name;
+  private String name;
   private int age;
-  private static Sex sex; // male or female
-  private static int height; // actual height of the person when standing up in cm
+  private Sex sex; // male or female
+  private int height; // actual height of the person when standing up in cm
   private Attributes attributes;
   private String workplaceID; // this is the locationID for the persons workplace
   private ArrayList<Object> inventory = new ArrayList<>();
@@ -34,7 +34,7 @@ public class Person
                 ArrayList<Property> m_hasProperties, ArrayList<Opinion> m_likesProperties, ArrayList<Opinion> m_dislikesProperties,
                 ArrayList<Need> m_needs, Position position)
   {
-    super(position);
+    super(m_id, position);
     name = m_name;
     age = m_age;
     if(Objects.equals(m_sex, "male"))
@@ -116,6 +116,36 @@ public class Person
   public Attributes getAttributes()
   {
     return attributes;
+  }
+
+  public String getWorkplaceID()
+  {
+    return workplaceID;
+  }
+
+  public ArrayList<Object> getInventory()
+  {
+    return inventory;
+  }
+
+  public ArrayList<Property> getHasProperties()
+  {
+    return hasProperties;
+  }
+
+  public ArrayList<Opinion> getLikesProperties()
+  {
+    return likesProperties;
+  }
+
+  public ArrayList<Opinion> getDislikesProperties()
+  {
+    return dislikesProperties;
+  }
+
+  public ArrayList<Need> getNeeds()
+  {
+    return needs;
   }
 }
 

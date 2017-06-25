@@ -2,7 +2,6 @@ package Managers;
 
 import java.util.ArrayList;
 
-import Entities.Entity;
 import Entities.Person;
 import Entities.Position;
 
@@ -36,7 +35,7 @@ public class PersonManager
     return positions;
   }
 
-  public Entity getPerson(int index)
+  public Person getPerson(int index)
   {
     return people.get(index);
   }

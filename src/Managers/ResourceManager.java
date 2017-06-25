@@ -151,9 +151,7 @@ public class ResourceManager
       Person person = new Person(id, name, sex, age, height, workplace, attributes, hasProperties, likesProperties,
                                  dislikesProperties, needArray, new Position(0, 0, 0));
       personManager.addPerson(person);
-      System.out.println("Person #" + i);
     }
-    System.out.println("Added all people from file");
   }
 
   private String readFile(String filename)

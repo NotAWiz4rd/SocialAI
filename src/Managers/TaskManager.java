@@ -14,6 +14,7 @@ public class TaskManager
 {
   private ArrayList<Task> tasks;
   private ArrayList<Requirement> requirements;
+  //currentTask?
 
   public TaskManager()
   {

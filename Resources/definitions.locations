@@ -1,3 +1,8 @@
+location-groups
+{
+ 'shop', 'school', 'government'
+}
+
 locations
 {
  {
