@@ -148,8 +148,10 @@ public class ResourceManager
         aNeedArray.setValue(generateNeedValue());
       }
 
+      Random random = new Random(); // place entities at random location within 999/999
+
       Person person = new Person(id, name, sex, age, height, workplace, attributes, hasProperties, likesProperties,
-                                 dislikesProperties, needArray, new Position(0, 0, 0));
+                                 dislikesProperties, needArray, new Position(random.nextInt(1000), random.nextInt(1000), 0));
       personManager.addPerson(person);
     }
   }

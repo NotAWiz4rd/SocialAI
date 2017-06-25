@@ -1,10 +1,12 @@
 package GUI;
 
-import Entities.Position;
-import Managers.PersonManager;
+import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import Entities.Position;
+import Managers.PersonManager;
 
 /**
  * Created by NotAWiz4rd on 27.03.2017.
@@ -21,6 +23,7 @@ public class MainFrame
     setLayout(null);
     entities = new JPanel[personManager.getPersonCount()];
     initializeEntities();
+    displayEntities();
   }
 
   private void displayEntities()
@@ -39,10 +42,11 @@ public class MainFrame
 
   private void initializeEntities()
   {
-    for(int i = 0; i < entities.length; i++)
+    for(int i = 0; i < personManager.getPersonCount(); i++)
     {
       entities[i] = new JPanel();
-      entities[i].setSize(2, 2);
+      entities[i].setSize(3, 3);
+      entities[i].setBackground(Color.black);
       add(entities[i]);
     }
   }

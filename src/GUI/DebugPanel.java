@@ -55,7 +55,7 @@ public class DebugPanel
         @Override
         public void mouseClicked(MouseEvent e)
         {
-          showDetailInfo(personManager.getPersonCount() - 1);
+          showDetailInfo(personManager.getPersonCount() - 1); // at this point always shows the last person
         }
       });
 

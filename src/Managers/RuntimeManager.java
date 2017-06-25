@@ -17,7 +17,7 @@ public class RuntimeManager
   {
     while(isRunning)
     {
-
+      simulateTick();
     }
   }
 
