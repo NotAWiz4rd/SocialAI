@@ -1,11 +1,12 @@
 package GUI;
 
 import Managers.RuntimeManager;
-import Testing.Test;
+import Testing.Startup;
 
 import javax.swing.WindowConstants;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.IOException;
 import java.net.URL;
 
 /**
@@ -22,10 +23,11 @@ public class GuiManager
   private Image iconImage;
 
   public GuiManager(String m_version)
+    throws IOException
   {
     version = m_version;
     getIconImage();
-    Test test = new Test(runtimeManager.personManager);
+    Startup test = new Startup(runtimeManager.personManager);
     initializeMainWindow();
     initializeDebugPanel();
     mainFrame.reload();

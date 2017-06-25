@@ -1,22 +1,1323 @@
-people
 {
- {
-  name: 'Cengiz'
-  age: '18'
-  sex: 'male'
-  height: '183'
-  workplace: 'school_1'
-  properties
-  {
-   'blondhair'
-  }
-  opinions
-  {
-   {
-    property: 'blondhair'
-    impact: '17'
-    personalLevel: '0'
-   }
-  }
- }
+id: '1'
+name: 'mxlbxv'
+sex: 'male'
+age: '39'
+height: '200'
+workplace: '#shop'
+attributes
+{
+'20'
+'7'
+'14'
+'1'
+'5'
 }
+properties
+{
+'shy'
+'has a bavarian accent'
+'really good rapper'
+'collects post stamps'
+}
+opinions
+{
+{
+property: 'has a nice ass'
+impact: '-57'
+personalLevel: '95'
+}
+{
+property: 'is afraid of the dark'
+impact: '14'
+personalLevel: '5'
+}
+{
+property: 'behaves like an asshole'
+impact: '-20'
+personalLevel: '43'
+}
+{
+property: 'impotent'
+impact: '-23'
+personalLevel: '9'
+}
+{
+property: 'drinks whisky'
+impact: '-14'
+personalLevel: '0'
+}
+{
+property: 'deaf'
+impact: '-94'
+personalLevel: '68'
+}
+{
+property: 'vegetarian'
+impact: '-94'
+personalLevel: '99'
+}
+{
+property: 'likes fast cars'
+impact: '-27'
+personalLevel: '7'
+}
+{
+property: 'has dyed hair'
+impact: '52'
+personalLevel: '90'
+}
+{
+property: 'likes to take selfies'
+impact: '-40'
+personalLevel: '94'
+}
+{
+property: 'loves burgers'
+impact: '20'
+personalLevel: '30'
+}
+}
+}
+&
+{
+id: '2'
+name: 'twtmrgoapwrn'
+sex: 'female'
+age: '43'
+height: '181'
+workplace: '#secretGovernmentAgency'
+attributes
+{
+'11'
+'11'
+'11'
+'13'
+'11'
+}
+properties
+{
+'collects post stamps'
+'fat'
+'addicted to chocolate'
+'always wears red'
+'doesnt shower very often'
+'likes the colour blue'
+'vegan'
+'impotent'
+'fancy'
+'albino'
+}
+opinions
+{
+{
+property: 'outgoing'
+impact: '99'
+personalLevel: '30'
+}
+{
+property: 'loves to ride bicycles'
+impact: '4'
+personalLevel: '87'
+}
+}
+}
+&
+{
+id: '3'
+name: 'xbvztjogidz'
+sex: 'female'
+age: '25'
+height: '196'
+workplace: '#shop'
+attributes
+{
+'4'
+'12'
+'11'
+'6'
+'12'
+}
+properties
+{
+'weird'
+'rich'
+'deaf'
+'outgoing'
+'goes to the gym'
+'vegan'
+'collects watches'
+'sucks ass'
+}
+opinions
+{
+{
+property: 'speaks with a lisp'
+impact: '-37'
+personalLevel: '31'
+}
+{
+property: 'self-conscious'
+impact: '5'
+personalLevel: '77'
+}
+{
+property: 'has a green thumb'
+impact: '52'
+personalLevel: '79'
+}
+{
+property: 'drinks whisky'
+impact: '-25'
+personalLevel: '47'
+}
+{
+property: 'has a british accent'
+impact: '38'
+personalLevel: '11'
+}
+{
+property: 'funny'
+impact: '-25'
+personalLevel: '46'
+}
+}
+}
+&
+{
+id: '4'
+name: 'afowepwhjrr'
+sex: 'female'
+age: '22'
+height: '202'
+workplace: '#shop'
+attributes
+{
+'11'
+'6'
+'12'
+'15'
+'15'
+}
+properties
+{
+'has a german accent'
+'outgoing'
+'weird'
+'likes fish'
+'likes country music'
+'vegan'
+'has a green thumb'
+}
+opinions
+{
+{
+property: 'behaves like an asshole'
+impact: '-65'
+personalLevel: '97'
+}
+{
+property: 'naive'
+impact: '-73'
+personalLevel: '11'
+}
+{
+property: 'has snall feet'
+impact: '19'
+personalLevel: '40'
+}
+{
+property: 'likes to hike'
+impact: '-54'
+personalLevel: '67'
+}
+{
+property: 'albino'
+impact: '28'
+personalLevel: '39'
+}
+}
+}
+&
+{
+id: '5'
+name: 'kufnbhus'
+sex: 'male'
+age: '12'
+height: '158'
+workplace: '#school'
+attributes
+{
+'15'
+'9'
+'16'
+'8'
+'15'
+}
+properties
+{
+'has a green thumb'
+'plays music'
+'weird'
+'addicted to chocolate'
+'outgoing'
+'likes fast cars'
+'yaysayer'
+'doesnt shower very often'
+'is afraid of the dark'
+}
+opinions
+{
+{
+property: 'always wears red'
+impact: '12'
+personalLevel: '93'
+}
+{
+property: 'fancy'
+impact: '-44'
+personalLevel: '45'
+}
+{
+property: 'sucks ass'
+impact: '-69'
+personalLevel: '91'
+}
+{
+property: 'wears glasses'
+impact: '75'
+personalLevel: '3'
+}
+}
+}
+&
+{
+id: '6'
+name: 'pwbandqxr'
+sex: 'female'
+age: '34'
+height: '199'
+workplace: '#shop'
+attributes
+{
+'16'
+'20'
+'12'
+'16'
+'10'
+}
+properties
+{
+'vegan'
+'has dyed hair'
+'likes fast cars'
+'outgoing'
+'goes to the gym'
+'arrogant'
+}
+opinions
+{
+{
+property: 'drinks a lot of alcohol'
+impact: '-32'
+personalLevel: '11'
+}
+{
+property: 'funny'
+impact: '91'
+personalLevel: '93'
+}
+{
+property: 'has snall feet'
+impact: '59'
+personalLevel: '99'
+}
+{
+property: 'albino'
+impact: '80'
+personalLevel: '67'
+}
+{
+property: 'has a british accent'
+impact: '7'
+personalLevel: '61'
+}
+{
+property: 'doesnt shower very often'
+impact: '-51'
+personalLevel: '3'
+}
+{
+property: 'behaves like an asshole'
+impact: '-25'
+personalLevel: '15'
+}
+{
+property: 'collects post stamps'
+impact: '-99'
+personalLevel: '35'
+}
+{
+property: 'rich'
+impact: '-77'
+personalLevel: '10'
+}
+}
+}
+&
+{
+id: '7'
+name: 'npzvupawhoig'
+sex: 'female'
+age: '24'
+height: '168'
+workplace: '#rollercoasterRepairTeam'
+attributes
+{
+'11'
+'9'
+'8'
+'17'
+'10'
+}
+properties
+{
+'has a nice ass'
+'vegetarian'
+'likes fast cars'
+'likes music'
+'sucks ass'
+'likes the colour blue'
+'has snall feet'
+'depressed'
+'yaysayer'
+'never wears yellow'
+}
+opinions
+{
+{
+property: 'has a green thumb'
+impact: '62'
+personalLevel: '84'
+}
+{
+property: 'blind'
+impact: '61'
+personalLevel: '36'
+}
+{
+property: 'snobby'
+impact: '-65'
+personalLevel: '37'
+}
+{
+property: 'likes fish'
+impact: '38'
+personalLevel: '92'
+}
+{
+property: 'arrogant'
+impact: '-4'
+personalLevel: '59'
+}
+{
+property: 'has dyed hair'
+impact: '77'
+personalLevel: '33'
+}
+{
+property: 'collects watches'
+impact: '-97'
+personalLevel: '21'
+}
+{
+property: 'playful'
+impact: '90'
+personalLevel: '10'
+}
+{
+property: 'opportunist'
+impact: '35'
+personalLevel: '0'
+}
+}
+}
+&
+{
+id: '8'
+name: 'baikjqs'
+sex: 'male'
+age: '25'
+height: '184'
+workplace: '#olympicTeam'
+attributes
+{
+'1'
+'5'
+'8'
+'20'
+'18'
+}
+properties
+{
+'vegetarian'
+'has a german accent'
+'depressed'
+'likes to dress like the opposite sex'
+'collects watches'
+}
+opinions
+{
+{
+property: 'writes poems'
+impact: '-37'
+personalLevel: '14'
+}
+{
+property: 'likes music'
+impact: '-50'
+personalLevel: '39'
+}
+{
+property: 'has a bavarian accent'
+impact: '27'
+personalLevel: '37'
+}
+{
+property: 'really good rapper'
+impact: '-66'
+personalLevel: '58'
+}
+{
+property: 'loves burgers'
+impact: '-38'
+personalLevel: '94'
+}
+{
+property: 'has snall feet'
+impact: '-27'
+personalLevel: '76'
+}
+{
+property: 'likes fish'
+impact: '87'
+personalLevel: '27'
+}
+{
+property: 'likes fast cars'
+impact: '13'
+personalLevel: '90'
+}
+{
+property: 'speaks with a lisp'
+impact: '1'
+personalLevel: '4'
+}
+{
+property: 'doesnt shower very often'
+impact: '16'
+personalLevel: '65'
+}
+{
+property: 'likes to take selfies'
+impact: '70'
+personalLevel: '43'
+}
+{
+property: 'naive'
+impact: '-74'
+personalLevel: '46'
+}
+{
+property: 'never wears yellow'
+impact: '-91'
+personalLevel: '56'
+}
+{
+property: 'drinks a lot of alcohol'
+impact: '-66'
+personalLevel: '98'
+}
+{
+property: 'opportunist'
+impact: '83'
+personalLevel: '71'
+}
+{
+property: 'outgoing'
+impact: '69'
+personalLevel: '12'
+}
+}
+}
+&
+{
+id: '9'
+name: 'rfajrayl'
+sex: 'male'
+age: '34'
+height: '191'
+workplace: '#shop'
+attributes
+{
+'8'
+'11'
+'7'
+'7'
+'13'
+}
+properties
+{
+'collects watches'
+'likes the colour blue'
+'doesnt shower very often'
+'likes music'
+'playful'
+'is afraid of the dark'
+'sucks ass'
+'likes to take selfies'
+'snobby'
+}
+opinions
+{
+{
+property: 'arrogant'
+impact: '1'
+personalLevel: '38'
+}
+{
+property: 'likes fast cars'
+impact: '15'
+personalLevel: '0'
+}
+}
+}
+&
+{
+id: '10'
+name: 'lqadfzd'
+sex: 'female'
+age: '38'
+height: '165'
+workplace: '#secretGovernmentAgency'
+attributes
+{
+'10'
+'4'
+'6'
+'12'
+'20'
+}
+properties
+{
+'likes music'
+'has a british accent'
+'doesnt like wine'
+'never wears yellow'
+'rich'
+'opportunist'
+'blind'
+'writes poems'
+}
+opinions
+{
+{
+property: 'likes to take selfies'
+impact: '30'
+personalLevel: '20'
+}
+{
+property: 'has a bavarian accent'
+impact: '-52'
+personalLevel: '77'
+}
+{
+property: 'impotent'
+impact: '-1'
+personalLevel: '51'
+}
+{
+property: 'really good rapper'
+impact: '-13'
+personalLevel: '37'
+}
+{
+property: 'weird'
+impact: '80'
+personalLevel: '25'
+}
+{
+property: 'albino'
+impact: '-87'
+personalLevel: '70'
+}
+{
+property: 'drinks whisky'
+impact: '64'
+personalLevel: '22'
+}
+{
+property: 'always wears red'
+impact: '76'
+personalLevel: '98'
+}
+}
+}
+&
+{
+id: '11'
+name: 'vpslze'
+sex: 'female'
+age: '29'
+height: '170'
+workplace: '#secretGovernmentAgency'
+attributes
+{
+'13'
+'11'
+'3'
+'11'
+'2'
+}
+properties
+{
+'likes the colour blue'
+'sporty'
+'behaves like an asshole'
+'collects watches'
+'always wears red'
+'self-conscious'
+'really good rapper'
+'has a british accent'
+'has a green thumb'
+}
+opinions
+{
+{
+property: 'speaks with a lisp'
+impact: '30'
+personalLevel: '71'
+}
+{
+property: 'albino'
+impact: '-71'
+personalLevel: '31'
+}
+{
+property: 'likes music'
+impact: '-82'
+personalLevel: '82'
+}
+{
+property: 'fancy'
+impact: '0'
+personalLevel: '6'
+}
+{
+property: 'likes to take selfies'
+impact: '5'
+personalLevel: '28'
+}
+{
+property: 'has a german accent'
+impact: '-87'
+personalLevel: '55'
+}
+{
+property: 'generous'
+impact: '2'
+personalLevel: '77'
+}
+}
+}
+&
+{
+id: '12'
+name: 'hkwjsvfnaacd'
+sex: 'female'
+age: '15'
+height: '175'
+workplace: '#school'
+attributes
+{
+'12'
+'7'
+'15'
+'19'
+'3'
+}
+properties
+{
+'rich'
+'collects watches'
+'fat'
+'self-conscious'
+'has a british accent'
+'speaks with a lisp'
+}
+opinions
+{
+{
+property: 'vegetarian'
+impact: '-57'
+personalLevel: '96'
+}
+{
+property: 'likes to take selfies'
+impact: '43'
+personalLevel: '85'
+}
+}
+}
+&
+{
+id: '13'
+name: 'opvjwe'
+sex: 'female'
+age: '34'
+height: '152'
+workplace: '#shop'
+attributes
+{
+'20'
+'17'
+'10'
+'5'
+'10'
+}
+properties
+{
+'has snall feet'
+'deaf'
+'has a bavarian accent'
+'drinks whisky'
+'drinks a lot of alcohol'
+'addicted to chocolate'
+'depressed'
+}
+opinions
+{
+{
+property: 'behaves like an asshole'
+impact: '45'
+personalLevel: '71'
+}
+{
+property: 'yaysayer'
+impact: '-73'
+personalLevel: '1'
+}
+{
+property: 'likes fish'
+impact: '60'
+personalLevel: '42'
+}
+{
+property: 'is afraid of the dark'
+impact: '48'
+personalLevel: '91'
+}
+{
+property: 'opportunist'
+impact: '99'
+personalLevel: '80'
+}
+{
+property: 'never wears yellow'
+impact: '88'
+personalLevel: '45'
+}
+}
+}
+&
+{
+id: '14'
+name: 'ofuxif'
+sex: 'female'
+age: '17'
+height: '191'
+workplace: '#school'
+attributes
+{
+'5'
+'13'
+'10'
+'9'
+'19'
+}
+properties
+{
+'rich'
+'naive'
+'funny'
+'vegetarian'
+'writes poems'
+'snobby'
+'drinks whisky'
+}
+opinions
+{
+{
+property: 'is afraid of the dark'
+impact: '-28'
+personalLevel: '63'
+}
+{
+property: 'collects watches'
+impact: '-77'
+personalLevel: '21'
+}
+{
+property: 'weird'
+impact: '-88'
+personalLevel: '85'
+}
+}
+}
+&
+{
+id: '15'
+name: 'oqhhy'
+sex: 'female'
+age: '30'
+height: '165'
+workplace: '#rollercoasterRepairTeam'
+attributes
+{
+'12'
+'4'
+'12'
+'15'
+'9'
+}
+properties
+{
+'deaf'
+'loves burgers'
+'drinks a lot of alcohol'
+'speaks with a lisp'
+'sporty'
+}
+opinions
+{
+{
+property: 'vegan'
+impact: '48'
+personalLevel: '3'
+}
+{
+property: 'blind'
+impact: '35'
+personalLevel: '26'
+}
+{
+property: 'likes fast cars'
+impact: '-33'
+personalLevel: '42'
+}
+{
+property: 'yaysayer'
+impact: '1'
+personalLevel: '57'
+}
+{
+property: 'likes to dress like the opposite sex'
+impact: '-44'
+personalLevel: '89'
+}
+{
+property: 'behaves like an asshole'
+impact: '-31'
+personalLevel: '9'
+}
+{
+property: 'wears glasses'
+impact: '-10'
+personalLevel: '88'
+}
+{
+property: 'fat'
+impact: '-57'
+personalLevel: '43'
+}
+{
+property: 'depressed'
+impact: '-69'
+personalLevel: '81'
+}
+{
+property: 'vegetarian'
+impact: '36'
+personalLevel: '4'
+}
+{
+property: 'has a german accent'
+impact: '-31'
+personalLevel: '8'
+}
+{
+property: 'doesnt like wine'
+impact: '72'
+personalLevel: '48'
+}
+{
+property: 'opportunist'
+impact: '-96'
+personalLevel: '98'
+}
+{
+property: 'playful'
+impact: '55'
+personalLevel: '10'
+}
+{
+property: 'has snall feet'
+impact: '35'
+personalLevel: '100'
+}
+{
+property: 'loves to clean'
+impact: '-8'
+personalLevel: '14'
+}
+}
+}
+&
+{
+id: '16'
+name: 'bxjnckw'
+sex: 'female'
+age: '44'
+height: '178'
+workplace: '#rollercoasterRepairTeam'
+attributes
+{
+'14'
+'11'
+'17'
+'11'
+'6'
+}
+properties
+{
+'rich'
+'funny'
+'always wears red'
+'deaf'
+'opportunist'
+'self-conscious'
+'playful'
+'has a bavarian accent'
+'loves burgers'
+}
+opinions
+{
+{
+property: 'likes fast cars'
+impact: '-65'
+personalLevel: '58'
+}
+{
+property: 'is afraid of the dark'
+impact: '34'
+personalLevel: '25'
+}
+{
+property: 'sucks ass'
+impact: '-56'
+personalLevel: '7'
+}
+{
+property: 'drinks whisky'
+impact: '85'
+personalLevel: '61'
+}
+{
+property: 'sporty'
+impact: '-51'
+personalLevel: '81'
+}
+{
+property: 'writes poems'
+impact: '69'
+personalLevel: '58'
+}
+{
+property: 'behaves like an asshole'
+impact: '-63'
+personalLevel: '42'
+}
+}
+}
+&
+{
+id: '17'
+name: 'nzwese'
+sex: 'male'
+age: '46'
+height: '155'
+workplace: '#shop'
+attributes
+{
+'11'
+'11'
+'18'
+'5'
+'13'
+}
+properties
+{
+'self-conscious'
+'arrogant'
+'opportunist'
+'likes fast cars'
+'weird'
+'impotent'
+'plays table tennis'
+}
+opinions
+{
+{
+property: 'fat'
+impact: '1'
+personalLevel: '86'
+}
+{
+property: 'loves to clean'
+impact: '-49'
+personalLevel: '88'
+}
+}
+}
+&
+{
+id: '18'
+name: 'dlfwav'
+sex: 'male'
+age: '17'
+height: '181'
+workplace: '#olympicTeam'
+attributes
+{
+'9'
+'8'
+'9'
+'8'
+'20'
+}
+properties
+{
+'has snall feet'
+'vegan'
+'rich'
+'collects watches'
+'depressed'
+'speaks with a lisp'
+'drinks a lot of alcohol'
+'sporty'
+'plays music'
+}
+opinions
+{
+{
+property: 'goes to the gym'
+impact: '81'
+personalLevel: '20'
+}
+{
+property: 'vegetarian'
+impact: '-36'
+personalLevel: '48'
+}
+{
+property: 'self-conscious'
+impact: '46'
+personalLevel: '28'
+}
+{
+property: 'fancy'
+impact: '-34'
+personalLevel: '59'
+}
+{
+property: 'collects post stamps'
+impact: '-4'
+personalLevel: '80'
+}
+{
+property: 'is afraid of the dark'
+impact: '30'
+personalLevel: '41'
+}
+{
+property: 'really good rapper'
+impact: '-42'
+personalLevel: '48'
+}
+{
+property: 'loves burgers'
+impact: '59'
+personalLevel: '28'
+}
+{
+property: 'sucks ass'
+impact: '-74'
+personalLevel: '77'
+}
+{
+property: 'plays table tennis'
+impact: '88'
+personalLevel: '77'
+}
+{
+property: 'has a british accent'
+impact: '-49'
+personalLevel: '28'
+}
+{
+property: 'impotent'
+impact: '-85'
+personalLevel: '80'
+}
+{
+property: 'opportunist'
+impact: '-13'
+personalLevel: '82'
+}
+}
+}
+&
+{
+id: '19'
+name: 'yhna'
+sex: 'male'
+age: '34'
+height: '184'
+workplace: '#rollercoasterRepairTeam'
+attributes
+{
+'18'
+'7'
+'17'
+'3'
+'15'
+}
+properties
+{
+'drinks whisky'
+'sucks ass'
+'vegan'
+'collects watches'
+'depressed'
+'loves to ride bicycles'
+'playful'
+}
+opinions
+{
+{
+property: 'blind'
+impact: '-34'
+personalLevel: '50'
+}
+{
+property: 'likes fast cars'
+impact: '25'
+personalLevel: '6'
+}
+{
+property: 'likes fish'
+impact: '28'
+personalLevel: '4'
+}
+{
+property: 'likes to take selfies'
+impact: '5'
+personalLevel: '26'
+}
+}
+}
+&
+{
+id: '20'
+name: 'uxrr'
+sex: 'male'
+age: '21'
+height: '156'
+workplace: '#rollercoasterRepairTeam'
+attributes
+{
+'14'
+'19'
+'20'
+'16'
+'4'
+}
+properties
+{
+'opportunist'
+'fancy'
+'naive'
+'drinks whisky'
+'loves to ride bicycles'
+'likes fast cars'
+}
+opinions
+{
+{
+property: 'generous'
+impact: '-10'
+personalLevel: '90'
+}
+{
+property: 'snobby'
+impact: '-34'
+personalLevel: '52'
+}
+{
+property: 'depressed'
+impact: '14'
+personalLevel: '8'
+}
+{
+property: 'really good rapper'
+impact: '91'
+personalLevel: '22'
+}
+{
+property: 'has a nice ass'
+impact: '95'
+personalLevel: '33'
+}
+{
+property: 'likes to dress like the opposite sex'
+impact: '60'
+personalLevel: '76'
+}
+{
+property: 'weird'
+impact: '86'
+personalLevel: '1'
+}
+{
+property: 'likes fish'
+impact: '-34'
+personalLevel: '40'
+}
+{
+property: 'likes to hike'
+impact: '70'
+personalLevel: '34'
+}
+{
+property: 'plays music'
+impact: '86'
+personalLevel: '56'
+}
+{
+property: 'albino'
+impact: '72'
+personalLevel: '44'
+}
+}
+}
+&

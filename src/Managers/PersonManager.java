@@ -1,10 +1,10 @@
 package Managers;
 
+import java.util.ArrayList;
+
 import Entities.Entity;
 import Entities.Person;
 import Entities.Position;
-
-import java.util.ArrayList;
 
 /**
  * Created by notawiz4rd on 26/03/2017.
@@ -34,16 +34,6 @@ public class PersonManager
     }
 
     return positions;
-  }
-
-
-  // indexes all entities. this should only be called once and only when all entities are added to the manager
-  public void indexPeople()
-  {
-    for(int i = 0; i < people.size(); i++)
-    {
-      people.get(i).setId(i);
-    }
   }
 
   public Entity getPerson(int index)

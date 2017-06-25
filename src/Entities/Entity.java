@@ -15,6 +15,12 @@ public class Entity
     position = m_position;
   }
 
+  public Entity(int m_id, Position m_position)
+  {
+    id = m_id;
+    position = m_position;
+  }
+
   public int getId()
   {
     return id;

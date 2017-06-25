@@ -1,11 +1,12 @@
 package Entities;
 
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Objects;
+
 import Enums.Sex;
 import Enums.Stance;
 import Managers.TaskManager;
-
-import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Created by NotAWiz4rd on 27.03.2017.
@@ -30,13 +31,25 @@ public class Person
   private TaskManager taskManager;
 
 
-  public Person(String m_name, int m_age, Sex m_sex, Position position, int m_height, int[] m_attributes)
+  public Person(int m_id, String m_name, String m_sex, int m_age, int m_height, String m_workplaceID, int[] m_attributes,
+                ArrayList<Property> m_hasProperties, ArrayList<Opinion> m_likesProperties, ArrayList<Opinion> m_dislikesProperties, Position position)
   {
     super(position);
     name = m_name;
     age = m_age;
-    sex = m_sex;
+    if(Objects.equals(m_sex, "male"))
+    {
+      sex = Sex.MALE;
+    }
+    else
+    {
+      sex = Sex.FEMALE;
+    }
     height = m_height;
+    workplaceID = m_workplaceID;
+    hasProperties = m_hasProperties;
+    likesProperties = m_likesProperties;
+    dislikesProperties = m_dislikesProperties;
 
     attributes = new Attributes(m_attributes[0], m_attributes[1], m_attributes[2], m_attributes[3], m_attributes[4]);
 

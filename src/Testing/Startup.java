@@ -1,18 +1,23 @@
 package Testing;
 
+import java.io.IOException;
+
 import Entities.Person;
 import Entities.Position;
 import Enums.Sex;
 import Managers.PersonManager;
+import Managers.ResourceManager;
 
 /**
  * Created by NotAWiz4rd on 26.03.2017.
  */
-public class Test
+public class Startup
 {
   PersonManager personManager;
+  ResourceManager resourceManager = new ResourceManager();
 
-  public Test(PersonManager m_personManager)
+  public Startup(PersonManager m_personManager)
+    throws IOException
   {
     personManager = m_personManager;
     initializeEntities();
@@ -20,10 +25,9 @@ public class Test
   }
 
   private void initializeEntities()
+    throws IOException
   {
-    Person person = new Person("Max Werner", 18, Sex.MALE, new Position(100, 100, 0), 195, new int[]{10, 13, 7, 7, 14});
-
-    personManager.addPerson(person);
+    resourceManager.loadResources(personManager);
   }
 
   private void createEnvironment()

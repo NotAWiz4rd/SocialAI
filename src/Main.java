@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import GUI.GuiManager;
 
 /**
@@ -9,6 +11,13 @@ public class Main
 
   public static void main(String[] args)
   {
-    GuiManager guiManager = new GuiManager(VERSION);
+    try
+    {
+      GuiManager guiManager = new GuiManager(VERSION);
+    }
+    catch(IOException e)
+    {
+      e.printStackTrace();
+    }
   }
 }
