@@ -6,15 +6,15 @@ package Entities;
 public class Need
 {
   private String id;
-  private String name; // how the value is shown ingame
   private String description; //basically a tooltip
-  // the value is saved within the person-object together with the need-id
+  private int value;
+  // the value is saved within the person-object together with the need
 
-  public Need(String m_id, String m_name, String m_description)
+  public Need(String m_id, String m_description, int m_value)
   {
     id = m_id;
-    name = m_name;
     description = m_description;
+    value = m_value;
   }
 
   public String getId()
@@ -27,16 +27,6 @@ public class Need
     this.id = id;
   }
 
-  public String getName()
-  {
-    return name;
-  }
-
-  public void setName(String name)
-  {
-    this.name = name;
-  }
-
   public String getDescription()
   {
     return description;
@@ -45,5 +35,15 @@ public class Need
   public void setDescription(String description)
   {
     this.description = description;
+  }
+
+  public int getValue()
+  {
+    return value;
+  }
+
+  public void setValue(int value)
+  {
+    this.value = value;
   }
 }

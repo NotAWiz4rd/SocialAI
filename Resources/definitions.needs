@@ -1,8 +1,12 @@
-needs
 {
- {
-  id: "fun"
-  name: "Fun"
-  description: "Represents the general fun-level of a person. A person gets grumpy if their fun is too low."
- }
+ id: 'Fun'
+ description: 'Represents the general fun-level of a person. A person gets grumpy if their fun is too low.'
+}
+{
+ id: 'Hunger'
+ description: 'When this is low a person has to eat stuff.'
+}
+{
+ id: 'Thirst'
+ description: 'When this is low a person has to drink stuff.'
 }

@@ -1,7 +1,6 @@
 package Entities;
 
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Objects;
 
 import Enums.Sex;
@@ -27,12 +26,13 @@ public class Person
   private ArrayList<Property> hasProperties;
   private ArrayList<Opinion> likesProperties;
   private ArrayList<Opinion> dislikesProperties;
-  private Map<String, Integer> needs; // stores need-id with their value
+  private ArrayList<Need> needs; // stores need-id with their value
   private TaskManager taskManager;
 
 
   public Person(int m_id, String m_name, String m_sex, int m_age, int m_height, String m_workplaceID, int[] m_attributes,
-                ArrayList<Property> m_hasProperties, ArrayList<Opinion> m_likesProperties, ArrayList<Opinion> m_dislikesProperties, Position position)
+                ArrayList<Property> m_hasProperties, ArrayList<Opinion> m_likesProperties, ArrayList<Opinion> m_dislikesProperties,
+                ArrayList<Need> m_needs, Position position)
   {
     super(position);
     name = m_name;
@@ -50,6 +50,7 @@ public class Person
     hasProperties = m_hasProperties;
     likesProperties = m_likesProperties;
     dislikesProperties = m_dislikesProperties;
+    needs = m_needs;
 
     attributes = new Attributes(m_attributes[0], m_attributes[1], m_attributes[2], m_attributes[3], m_attributes[4]);
 

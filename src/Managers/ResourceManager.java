@@ -5,7 +5,9 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Random;
 
+import Entities.Need;
 import Entities.Opinion;
 import Entities.Person;
 import Entities.Position;
@@ -24,6 +26,7 @@ public class ResourceManager
   private String propertiesFile = "Resources/definitions.properties";
 
   private PersonManager personManager;
+  private ArrayList<Need> needArray = new ArrayList<>();
 
   public ResourceManager()
   {
@@ -63,8 +66,20 @@ public class ResourceManager
   }
 
   private void loadNeeds()
+    throws IOException
   {
+    String needsEcrypted = readFile(needsFile);
+    ArrayList<Need> needs = new ArrayList<>();
 
+    String[] needDatas = needsEcrypted.replace("{", "").replace("\n", "").split("}");
+
+    for(String needData : needDatas)
+    {
+      String[] valueData = needData.split("'");
+
+      Need need = new Need(valueData[1], valueData[3], generateNeedValue());
+      needArray.add(need);
+    }
   }
 
   private void loadPeople()
@@ -128,8 +143,13 @@ public class ResourceManager
         t += 2;
       }
 
+      for(Need aNeedArray : needArray)
+      {
+        aNeedArray.setValue(generateNeedValue());
+      }
+
       Person person = new Person(id, name, sex, age, height, workplace, attributes, hasProperties, likesProperties,
-                                 dislikesProperties, new Position(0, 0, 0));
+                                 dislikesProperties, needArray, new Position(0, 0, 0));
       personManager.addPerson(person);
       System.out.println("Person #" + i);
     }
@@ -141,5 +161,11 @@ public class ResourceManager
   {
     byte[] encoded = Files.readAllBytes(Paths.get(filename));
     return new String(encoded, Charset.defaultCharset());
+  }
+
+  private int generateNeedValue()
+  {
+    Random random = new Random();
+    return random.nextInt(50) + 50; // value from 50 to 99
   }
 }
