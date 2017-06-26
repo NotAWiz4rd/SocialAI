@@ -85,7 +85,7 @@ public class DebugPanel
     for(int i = 0; i < personCount; i++)
     {
       positionPanels[i].setText("Position: " + personManager.getPerson(i).getPosition().getX() + " "
-                                     + personManager.getPerson(i).getPosition().getY() + " " + personManager.getPerson(i).getPosition().getZ());
+                                + personManager.getPerson(i).getPosition().getY() + " " + personManager.getPerson(i).getPosition().getZ());
       actionPanels[i].setText("Current Action: " + "Chilling");
     }
   }
@@ -115,7 +115,15 @@ public class DebugPanel
     JLabel heightPanel = new JLabel("Height: " + person.getHeight() + "cm           ");
     JLabel workplacePanel = new JLabel("Workplace: " + person.getWorkplaceID() + "                     ");
     JLabel stancePanel = new JLabel("Stance: " + person.getStance() + "        ");
-    JLabel propertiesPanel = new JLabel();
+
+    StringBuilder propertyString = new StringBuilder();
+    for(int l = 0; l < person.getHasProperties().size(); l++)
+    {
+      propertyString.append(person.getHasProperties().get(l).getId());
+      propertyString.append(",  ");
+    }
+    JLabel propertiesPanel = new JLabel(propertyString.toString());
+
     JLabel likesPanel = new JLabel();
     JLabel dislikesPanel = new JLabel();
     JLabel needsPanel = new JLabel();
