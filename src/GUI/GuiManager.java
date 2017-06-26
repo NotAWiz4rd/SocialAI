@@ -1,13 +1,15 @@
 package GUI;
 
-import Managers.RuntimeManager;
-import Testing.Startup;
-
-import javax.swing.WindowConstants;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.IOException;
 import java.net.URL;
+
+import javax.swing.WindowConstants;
+
+import Interfaces.ChangeListener;
+import Managers.RuntimeManager;
+import Testing.Startup;
 
 /**
  * Created by notawiz4rd on 26/03/2017.
@@ -15,6 +17,7 @@ import java.net.URL;
 
 // This is the Base Class from where the GUI is managed
 public class GuiManager
+  implements ChangeListener
 {
   private MainFrame mainFrame;
   private DebugPanel debugPanel;
@@ -28,14 +31,15 @@ public class GuiManager
     version = m_version;
     getIconImage();
     Startup test = new Startup(runtimeManager.personManager);
+    runtimeManager.setChangeListener(this);
     initializeMainWindow();
     initializeDebugPanel();
-    mainFrame.reload();
+    reload();
   }
 
   private void initializeMainWindow()
   {
-    mainFrame = new MainFrame(runtimeManager.personManager);
+    mainFrame = new MainFrame(runtimeManager);
     mainFrame.setTitle("MainWindow v" + version);
     mainFrame.setSize(1000, 1000);
     mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -76,4 +80,9 @@ public class GuiManager
     mainFrame.reload();
   }
 
+  @Override
+  public void onChangeHappened()
+  {
+    reload();
+  }
 }

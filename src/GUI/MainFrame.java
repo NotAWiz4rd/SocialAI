@@ -2,11 +2,13 @@ package GUI;
 
 import java.awt.Color;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import Entities.Position;
 import Managers.PersonManager;
+import Managers.RuntimeManager;
 
 /**
  * Created by NotAWiz4rd on 27.03.2017.
@@ -15,13 +17,16 @@ public class MainFrame
   extends JFrame
 {
   private PersonManager personManager;
+  private RuntimeManager runtimeManager;
   private JPanel[] entities;
 
-  public MainFrame(PersonManager m_personManager)
+  public MainFrame(RuntimeManager m_runtimeManager)
   {
-    personManager = m_personManager;
+    runtimeManager = m_runtimeManager;
+    personManager = runtimeManager.personManager;
     setLayout(null);
     entities = new JPanel[personManager.getPersonCount()];
+    displayButtons();
     initializeEntities();
     displayEntities();
   }
@@ -51,8 +56,28 @@ public class MainFrame
     }
   }
 
+  private void displayButtons()
+  {
+    JButton start = new JButton("Start");
+    JButton stop = new JButton("Stop");
+
+    start.addActionListener(e -> runtimeManager.start());
+
+    stop.addActionListener(e -> runtimeManager.stop());
+
+    start.setSize(50, 50);
+    stop.setSize(50, 50);
+
+    start.setLocation(50, 400);
+    stop.setLocation(100, 400);
+
+    add(start);
+    add(stop);
+  }
+
   public void reload()
   {
     displayEntities();
+    displayEnvironment();
   }
 }

@@ -44,4 +44,12 @@ public class PersonManager
   {
     return people.size();
   }
+
+  public void movePeople()
+  {
+    for(Person person : people)
+    {
+      person.move();
+    }
+  }
 }

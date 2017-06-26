@@ -2,6 +2,7 @@ package Entities;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Random;
 
 import Enums.Sex;
 import Enums.Stance;
@@ -75,7 +76,16 @@ public class Person
 
   public void move()
   {
-    // TODO implement a random move function
+    // 5px = 1m?
+    int x = getPosition().getX();
+    int y = getPosition().getY();
+
+    Random random = new Random();
+
+    x += random.nextGaussian() * 5;
+    y += random.nextGaussian() * 5;
+
+    setPosition(x, y, getPosition().getZ());
   }
 
   public Stance getStance()

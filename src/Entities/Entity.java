@@ -40,4 +40,9 @@ public class Entity
   {
     this.position = position;
   }
+
+  public void setPosition(int x, int y, int z)
+  {
+    this.position = new Position(x, y, z);
+  }
 }

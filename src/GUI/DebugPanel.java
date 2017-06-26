@@ -21,52 +21,73 @@ public class DebugPanel
 {
   private PersonManager personManager;
 
-  private static int ENTRYHEIGHT = 50;
+  private static int ENTRYHEIGHT = 40;
+
+  private int personCount;
+
+  //all Panels and Labels
+  JPanel[] panels;
+  JLabel[] namePanels;
+  JLabel[] positionPanels;
+  JLabel[] actionPanels;
+  JLabel[] idPanels;
 
   public DebugPanel(PersonManager m_personManager)
   {
     personManager = m_personManager;
     setLayout(null);
+
+    personCount = personManager.getPersonCount();
+
+    panels = new JPanel[personCount];
+    idPanels = new JLabel[personCount];
+    namePanels = new JLabel[personCount];
+    positionPanels = new JLabel[personCount];
+    actionPanels = new JLabel[personCount];
+
     loadEntities();
   }
 
   private void loadEntities()
   {
     int y = 0;
-    for(int i = 0; i < personManager.getPersonCount(); i++)
+    for(int i = 0; i < personCount; i++)
     {
-      JPanel panel = new JPanel();
-      JLabel namePanel = new JLabel("Name: " + personManager.getPerson(i).getName());
-      JLabel positionPanel = new JLabel("Position: " + personManager.getPerson(i).getPosition().getX() + " "
-                                        + personManager.getPerson(i).getPosition().getY() + " " + personManager.getPerson(i).getPosition().getZ());
-      JLabel actionPanel = new JLabel("Current Action: " + "Chilling");
-      JLabel idPanel = new JLabel("ID: " + personManager.getPerson(i).getId());
-      panel.setSize(500, ENTRYHEIGHT);
-      panel.setLocation(0, y);
-      panel.add(idPanel);
-      panel.add(namePanel);
-      panel.add(positionPanel);
-      panel.add(actionPanel);
-      add(panel);
+      panels[i] = new JPanel();
+      idPanels[i] = new JLabel("ID: " + personManager.getPerson(i).getId());
+      namePanels[i] = new JLabel("Name: " + personManager.getPerson(i).getName());
+      positionPanels[i] = new JLabel("Position: " + personManager.getPerson(i).getPosition().getX() + " "
+                                     + personManager.getPerson(i).getPosition().getY() + " " + personManager.getPerson(i).getPosition().getZ());
+      actionPanels[i] = new JLabel("Current Action: " + "Chilling");
+      panels[i].setSize(500, ENTRYHEIGHT);
+      panels[i].setLocation(0, y);
+      panels[i].add(idPanels[i]);
+      panels[i].add(namePanels[i]);
+      panels[i].add(positionPanels[i]);
+      panels[i].add(actionPanels[i]);
+      add(panels[i]);
       y += ENTRYHEIGHT;
 
-      panel.addMouseListener(new MouseAdapter()
+      panels[i].addMouseListener(new MouseAdapter()
       {
         @Override
         public void mouseClicked(MouseEvent e)
         {
-          showDetailInfo(personManager.getPersonCount() - 1); // at this point always shows the last person
+          int x = (int) e.getYOnScreen() / ENTRYHEIGHT;
+          showDetailInfo(x - 1);
         }
       });
-
-      // TODO open detail window on click and pause simulation
     }
-
   }
 
   public void reload()
   {
-    // TODO check what has changed and only change those values
+    for(int i = 0; i < personCount; i++)
+    {
+      positionPanels[i].setText("Position: " + personManager.getPerson(i).getPosition().getX() + " "
+                                     + personManager.getPerson(i).getPosition().getY() + " " + personManager.getPerson(i).getPosition().getZ());
+      actionPanels[i].setText("Current Action: " + "Chilling");
+    }
   }
 
   private void showDetailInfo(int index)

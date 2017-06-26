@@ -1,5 +1,11 @@
 package Managers;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import Interfaces.ChangeListener;
+
 /**
  * Created by NotAWiz4rd on 15.04.2017.
  */
@@ -10,29 +16,53 @@ public class RuntimeManager
 
   public PersonManager personManager = new PersonManager();
   public ObjectManager objectManager = new ObjectManager();
+  private ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+  private long speed = 1000; // 1000 = 1 tick per second
+  private ChangeListener listener;
+  private int runtime = 0;
 
-  private boolean isRunning = false;
+  private boolean isRunning = true;
 
   public RuntimeManager()
   {
-    while(isRunning)
-    {
-      simulateTick();
-    }
+  }
+
+  private void run()
+  {
+    scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+    scheduledExecutorService.scheduleAtFixedRate(this::simulateTick, 0, speed, TimeUnit.MILLISECONDS);
   }
 
   public void start()
   {
     isRunning = true;
+    run();
   }
 
   public void stop()
   {
     isRunning = false;
+    scheduledExecutorService.shutdown();
   }
 
   private void simulateTick()
   {
+    personManager.movePeople();
+    runtime++;
 
+    if(listener != null)
+    {
+      listener.onChangeHappened(); // notify GuiManager to reload
+    }
+  }
+
+  public void setSpeed(int newSpeed)
+  {
+    speed = newSpeed; // 500 double speed, 250 quadruple speed
+  }
+
+  public void setChangeListener(ChangeListener m_listener)
+  {
+    listener = m_listener;
   }
 }
