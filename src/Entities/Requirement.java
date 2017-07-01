@@ -5,12 +5,10 @@ package Entities;
  */
 public class Requirement
 {
-  private String actionID;
   private String requirementString;
 
-  public Requirement(String m_actionID, String m_requirementString)
+  public Requirement(String m_requirementString)
   {
-    actionID = m_actionID;
     requirementString = m_requirementString;
   }
 
@@ -23,16 +21,6 @@ public class Requirement
   private void decodeRequirement()
   {
 
-  }
-
-  public String getActionID()
-  {
-    return actionID;
-  }
-
-  public void setActionID(String actionID)
-  {
-    this.actionID = actionID;
   }
 
   public String getRequirementString()

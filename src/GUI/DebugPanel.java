@@ -26,11 +26,14 @@ public class DebugPanel
   private int personCount;
 
   //all Panels and Labels
-  JPanel[] panels;
-  JLabel[] namePanels;
-  JLabel[] positionPanels;
-  JLabel[] actionPanels;
-  JLabel[] idPanels;
+  private JPanel[] panels;
+  private JLabel[] namePanels;
+  private JLabel[] positionPanels;
+  private JLabel[] actionPanels;
+  private JLabel[] idPanels;
+  private JLabel[] needPanels;
+  private JLabel[] stancePanels;
+  private JLabel[] currentSizePanels;
 
   public DebugPanel(PersonManager m_personManager)
   {
@@ -44,6 +47,9 @@ public class DebugPanel
     namePanels = new JLabel[personCount];
     positionPanels = new JLabel[personCount];
     actionPanels = new JLabel[personCount];
+    needPanels = new JLabel[personCount];
+    stancePanels = new JLabel[personCount];
+    currentSizePanels = new JLabel[personCount];
 
     loadEntities();
   }
@@ -84,9 +90,31 @@ public class DebugPanel
   {
     for(int i = 0; i < personCount; i++)
     {
-      positionPanels[i].setText("Position: " + personManager.getPerson(i).getPosition().getX() + " "
-                                + personManager.getPerson(i).getPosition().getY() + " " + personManager.getPerson(i).getPosition().getZ());
+      Person person = personManager.getPerson(i);
+
+      positionPanels[i].setText("Position: " + person.getPosition().getX() + " "
+                                + person.getPosition().getY() + " " + person.getPosition().getZ());
       actionPanels[i].setText("Current Action: " + "Chilling");
+
+      StringBuilder needsString = new StringBuilder();
+      for(int t = 0; t < person.getNeeds().size(); t++)
+      {
+        needsString.append(person.getNeeds().get(t).getId() + ": " + person.getNeeds().get(t).getValue() + "   ");
+      }
+      if(needPanels[i] != null)
+      {
+        needPanels[i].setText(needsString.toString());
+      }
+
+      if(stancePanels[i] != null)
+      {
+        stancePanels[i].setText("Stance: " + person.getStance() + "        ");
+      }
+
+      if(currentSizePanels[i] != null)
+      {
+        currentSizePanels[i].setText("Current Size: " + person.getCurrentSize() + "cm            ");
+      }
     }
   }
 
@@ -102,48 +130,53 @@ public class DebugPanel
 
     JPanel panel = new JPanel();
 
-    JLabel idPanel = new JLabel("ID: " + person.getId() + "                     ");
-    JLabel namePanel = new JLabel("Name: " + person.getName() + "                     ");
-    JLabel positionPanel = new JLabel("Position: " + person.getPosition().getX() + " "
-                                      + person.getPosition().getY() + " " + person.getPosition().getZ());
-    JLabel actionPanel = new JLabel("Current Action: " + "Chilling" + "         ");
+    JLabel agePanel = new JLabel("Age: " + person.getAge() + "   ");
     Attributes attributes = person.getAttributes();
     JLabel attributePanel = new JLabel("Strength: " + attributes.getStrength() + "  Charisma: " + attributes.getCharisma() + "  Constitution: "
                                        + attributes.getConstitution() + "  Intelligence: " + attributes.getIntelligence() + "  Dexterity: "
                                        + attributes.getDexterity());
-    JLabel sexPanel = new JLabel("Sex: " + person.getSex() + "                     ");
+    JLabel sexPanel = new JLabel("Sex: " + person.getSex() + "          ");
     JLabel heightPanel = new JLabel("Height: " + person.getHeight() + "cm           ");
     JLabel workplacePanel = new JLabel("Workplace: " + person.getWorkplaceID() + "                     ");
-    JLabel stancePanel = new JLabel("Stance: " + person.getStance() + "        ");
+    stancePanels[index] = new JLabel("Stance: " + person.getStance() + "        ");
 
     StringBuilder propertyString = new StringBuilder();
     for(int l = 0; l < person.getHasProperties().size(); l++)
     {
       propertyString.append(person.getHasProperties().get(l).getId());
-      propertyString.append(",  ");
+      propertyString.append(", \n ");
     }
     JLabel propertiesPanel = new JLabel(propertyString.toString());
 
+    // TODO think about ways of displaying the arrayLists
     JLabel likesPanel = new JLabel();
     JLabel dislikesPanel = new JLabel();
-    JLabel needsPanel = new JLabel();
-    JLabel currentSizePanel = new JLabel("Current Size: " + person.getCurrentSize() + "cm            ");
-    // TODO think about ways of displaying the arrayLists
 
-    panel.add(idPanel);
-    panel.add(namePanel);
-    panel.add(positionPanel);
-    panel.add(actionPanel);
+    StringBuilder needsString = new StringBuilder();
+    for(int i = 0; i < person.getNeeds().size(); i++)
+    {
+      needsString.append(person.getNeeds().get(i).getId() + ": " + person.getNeeds().get(i).getValue() + "   ");
+    }
+    needPanels[index] = new JLabel(needsString.toString());
+    currentSizePanels[index] = new JLabel("Current Size: " + person.getCurrentSize() + "cm            ");
+
+    panel.add(idPanels[index]);
+    panel.add(namePanels[index]);
+    panel.add(positionPanels[index]);
+    panel.add(agePanel);
+    panel.add(actionPanels[index]);
     panel.add(sexPanel);
     panel.add(heightPanel);
     panel.add(workplacePanel);
-    panel.add(needsPanel);
-    panel.add(stancePanel);
+    panel.add(needPanels[index]);
+    panel.add(stancePanels[index]);
     panel.add(attributePanel);
     panel.add(propertiesPanel);
-    panel.add(currentSizePanel);
+    panel.add(currentSizePanels[index]);
     panel.add(likesPanel);
     panel.add(dislikesPanel);
+
+    // possible changes in: position, action, needs, stance, currentSize
 
     detailWindow.add(panel);
   }

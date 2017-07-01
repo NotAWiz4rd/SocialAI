@@ -16,10 +16,10 @@ public class RuntimeManager
 
   public PersonManager personManager = new PersonManager();
   public ObjectManager objectManager = new ObjectManager();
+  public ActionManager actionManager = new ActionManager();
   private ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-  private long speed = 1000; // 1000 = 1 tick per second
+  private long speed = 250; // 1000 = 1 tick per second
   private ChangeListener listener;
-  private int runtime = 0;
 
   private boolean isRunning = true;
 
@@ -47,8 +47,7 @@ public class RuntimeManager
 
   private void simulateTick()
   {
-    personManager.movePeople();
-    runtime++;
+    personManager.simulatePeople();
 
     if(listener != null)
     {

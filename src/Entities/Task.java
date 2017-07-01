@@ -1,18 +1,30 @@
 package Entities;
 
+import java.util.ArrayList;
+
 /**
  * Created by NotAWiz4rd on 27.03.2017.
  */
 public class Task
 {
+  // A Task in a persons taskManager. Might have several actions as part of the task
   private boolean isCancelable;
+  private boolean isFinished;
   private int priority;
-  private Action action;  // TODO evaluate if this should be an Array to be able to make complex tasks
+  private ArrayList<Action> actions = new ArrayList<>();
 
-  public Task(boolean m_isCancelable, int m_priority)
+  public Task(boolean m_isCancelable, int m_priority, Action action)
   {
     isCancelable = m_isCancelable;
     priority = m_priority;
+    actions.add(action);
+  }
+
+  public Task(boolean m_isCancelable, int m_priority, ArrayList<Action> m_actions)
+  {
+    isCancelable = m_isCancelable;
+    priority = m_priority;
+    actions = m_actions;
   }
 
   public boolean isCancelable()
@@ -35,13 +47,28 @@ public class Task
     this.priority = priority;
   }
 
-  public Action getAction()
+  public ArrayList<Action> getAction()
   {
-    return action;
+    return actions;
   }
 
-  public void setAction(Action action)
+  public void setAction(ArrayList<Action> actions)
   {
-    this.action = action;
+    this.actions = actions;
+  }
+
+  public void addAction(Action action)
+  {
+    actions.add(action);
+  }
+
+  public boolean isFinished()
+  {
+    return isFinished;
+  }
+
+  public void setFinished(boolean finished)
+  {
+    isFinished = finished;
   }
 }

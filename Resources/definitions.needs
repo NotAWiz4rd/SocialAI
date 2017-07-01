@@ -10,3 +10,7 @@
  id: 'Thirst'
  description: 'When this is low a person has to drink stuff.'
 }
+{
+ id: 'Sleep'
+ description: 'An obvious one, isnt it?'
+}

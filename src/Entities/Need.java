@@ -8,7 +8,6 @@ public class Need
   private String id;
   private String description; //basically a tooltip
   private int value;
-  // the value is saved within the person-object together with the need
 
   public Need(String m_id, String m_description, int m_value)
   {

@@ -7,11 +7,14 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Random;
 
+import Entities.Action;
 import Entities.Need;
+import Entities.NeedSatisfaction;
 import Entities.Opinion;
 import Entities.Person;
 import Entities.Position;
 import Entities.Property;
+import Entities.Requirement;
 
 /**
  * Created by NotAWiz4rd on 10.04.2017.
@@ -26,17 +29,20 @@ public class ResourceManager
   private String propertiesFile = "Resources/definitions.properties";
 
   private PersonManager personManager;
+  private ActionManager actionManager;
   private ArrayList<Need> needArray = new ArrayList<>();
+  private Random random = new Random();
 
   public ResourceManager()
   {
 
   }
 
-  public void loadResources(PersonManager m_personManager)
+  public void loadResources(PersonManager m_personManager, ActionManager m_actionManager)
     throws IOException
   {
     personManager = m_personManager;
+    actionManager = m_actionManager;
     loadLocations();
     loadProperties();
     loadObjects();
@@ -61,23 +67,72 @@ public class ResourceManager
   }
 
   private void loadActions()
+    throws IOException
   {
+    String actionsEncrypted = readFile(actionsFile);
 
+    String[] actionDatas = actionsEncrypted.replace("{", "").replace("\n", "").
+      replace("}", "").split("&");
+
+    for(int i = 0; i < actionDatas.length - 1; i++)
+    {
+      String[] actionData = actionDatas[i].split("'");
+
+      String id = actionData[1];
+      Boolean multitaskable = Boolean.parseBoolean(actionData[3]);
+
+      ArrayList<NeedSatisfaction> needSatisfactions = new ArrayList<>();
+
+      Requirement requirement;
+
+      if(!actionData[5].equals("null"))
+      {
+        needSatisfactions.add(new NeedSatisfaction(actionData[5], Integer.parseInt(actionData[7])));
+
+        if(actionData[8].contains(";"))
+        {
+          needSatisfactions.add(new NeedSatisfaction(actionData[9], Integer.parseInt(actionData[11])));
+          requirement = new Requirement(actionData[13]);
+        }
+        else
+        {
+          requirement = new Requirement(actionData[9]);
+        }
+      }
+      else
+      {
+        needSatisfactions = null;
+        requirement = new Requirement(actionData[9]);
+      }
+
+      // decrypt only one requirement for now but keep the general ArrayList structure for future expansion
+      ArrayList<Requirement> requirements = new ArrayList<>();
+      requirements.add(requirement);
+
+
+      if(needSatisfactions != null)
+      {
+        actionManager.addAction(new Action(id, multitaskable, requirements, needSatisfactions));
+      }
+      else
+      {
+        actionManager.addAction(new Action(id, multitaskable, requirements));
+      }
+    }
   }
 
   private void loadNeeds()
     throws IOException
   {
-    String needsEcrypted = readFile(needsFile);
-    ArrayList<Need> needs = new ArrayList<>();
+    String needsEncrypted = readFile(needsFile);
 
-    String[] needDatas = needsEcrypted.replace("{", "").replace("\n", "").split("}");
+    String[] needDatas = needsEncrypted.replace("{", "").replace("\n", "").split("}");
 
     for(String needData : needDatas)
     {
       String[] valueData = needData.split("'");
 
-      Need need = new Need(valueData[1], valueData[3], generateNeedValue());
+      Need need = new Need(valueData[1], valueData[3], 0);
       needArray.add(need);
     }
   }
@@ -148,7 +203,7 @@ public class ResourceManager
         aNeedArray.setValue(generateNeedValue());
       }
 
-      Random random = new Random(); // place entities at random location within 999/999
+      // place entities at random location within 999/999
 
       Person person = new Person(id, name, sex, age, height, workplace, attributes, hasProperties, likesProperties,
                                  dislikesProperties, needArray, new Position(random.nextInt(1000), random.nextInt(1000), 0));
@@ -165,7 +220,6 @@ public class ResourceManager
 
   private int generateNeedValue()
   {
-    Random random = new Random();
     return random.nextInt(50) + 50; // value from 50 to 99
   }
 }

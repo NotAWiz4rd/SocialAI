@@ -14,6 +14,10 @@ public class PersonManager
 {
   private ArrayList<Person> people = new ArrayList<>();
 
+  private long tickCount = 0;
+
+  private final int DECREASE_TICK = 10;
+
   public PersonManager()
   {
   }
@@ -45,11 +49,29 @@ public class PersonManager
     return people.size();
   }
 
-  public void movePeople()
+  private void movePeople()
   {
     for(Person person : people)
     {
       person.move();
     }
+  }
+
+  private void decreaseNeeds()
+  {
+    for(Person person : people)
+    {
+      if(tickCount % DECREASE_TICK == 0) // decrease needs every x ticks
+      {
+        person.decreaseNeeds();
+      }
+    }
+  }
+
+  public void simulatePeople()
+  {
+    tickCount++;
+    movePeople();
+    decreaseNeeds();
   }
 }

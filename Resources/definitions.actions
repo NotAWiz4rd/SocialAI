@@ -1,107 +1,112 @@
-actions
-{
  {
-  id: "sleep"
-  isMultitaskable: "false"
+  id: 'sleep'
+  isMultitaskable: 'false'
   satisfyNeeds
   {
-   id: "sleep"
-   value: "75";
-   id: "fun"
-   value: "10"
+   id: 'sleep'
+   value: '75';
+   id: 'fun'
+   value: '10'
   }
   requirements
   {
-   "position #sleepspot radius 2"
+   'position #sleepspot radius 2'
   }
  }
+ &
  {
-  id: "eat"
-  isMultitaskable: "true"
+  id: 'eat'
+  isMultitaskable: 'true'
   satisfyNeeds
   {
-   id: "hunger"
-   value: "75";
+   id: 'hunger'
+   value: '75'
   }
   requirements
   {
-   "position #food radius 2"
+   'position #food radius 2'
   }
  }
+ &
  {
-  id: "read"
-  isMultitaskable: "false"
+  id: 'read'
+  isMultitaskable: 'false'
   satisfyNeeds
   {
-   id: "fun"
-   value: "20";
+   id: 'fun'
+   value: '20'
   }
   requirements
   {
-   "position #readable radius 2"
+   'position #readable radius 2'
   }
  }
+ &
  {
-  id: "drink"
-  isMultitaskable: "true"
+  id: 'drink'
+  isMultitaskable: 'true'
   satisfyNeeds
   {
-   id: "thirst"
-   value: "40";
+   id: 'thirst'
+   value: '40'
   }
   requirements
   {
-   "position #drinkable radius 2"
+   'position #drinkable radius 2'
   }
  }
+ &
  {
-  id: "goto"
-  isMultitaskable: "true"
+  id: 'goto'
+  isMultitaskable: 'true'
   satisfyNeeds
   {
-   id: "null"
-   value: "0";
+   id: 'null'
+   value: '0'
   }
   requirements
-  {}
+  {'null'}
  }
+ &
  {
-  id: "talkto"
-  isMultitaskable: "true"
+  id: 'talkto'
+  isMultitaskable: 'true'
   satisfyNeeds
   {
-   id: "sociality"
-   value: "15";
-  }
-  requirements
-  {
-   "position #person radius 5"
-  }
- }
- {
-  id: "write"
-  isMultitaskable: "true"
-  satisfyNeeds
-  {
-   id: "null"
-   value: "0";
+   id: 'sociality'
+   value: '15'
   }
   requirements
   {
-   "position #writable radius 2"
+   'position #person radius 5'
   }
  }
+ &
  {
-  id: "work"
-  isMultitaskable: "true"
+  id: 'write'
+  isMultitaskable: 'true'
   satisfyNeeds
   {
-   id: "null"
-   value: "0";
+   id: 'null'
+   value: '0'
   }
   requirements
   {
-   "location $workplace"
+   'position #writable radius 2'
   }
  }
-}
+ &
+ {
+  id: 'work'
+  isMultitaskable: 'true'
+  satisfyNeeds
+  {
+   id: 'null'
+   value: '0'
+  }
+  requirements
+  {
+   'location $workplace'
+  }
+ }
+ &
