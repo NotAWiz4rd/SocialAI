@@ -51,7 +51,7 @@ public class RuntimeManager
 
     if(listener != null)
     {
-      listener.onChangeHappened(); // notify GuiManager to reload
+      listener.onChangeHappened(); // notify GuiManager to reload; this is just for testing in our GUI
     }
   }
 

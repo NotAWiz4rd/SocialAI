@@ -7,21 +7,21 @@ import java.util.ArrayList;
  */
 public class Action
 {
-  // a single action which might be multitaskable (e.g. speak, eat, read, etc.)
+  // a single action which might be multitaskable (e.g. eat, read, etc.)
   private String id;
   private boolean isMultitaskable;
   private ArrayList<NeedSatisfaction> needSatisfactions; // String is the need-id, integer is the value, this can be negative
-  private ArrayList<Requirement> requirements;
+  private ArrayList<String> requirements;
   // TODO implement this being pausable and have a standard time or something
 
-  public Action(String m_id, boolean m_isMultitaskable, ArrayList<Requirement> m_requirements)
+  public Action(String m_id, boolean m_isMultitaskable, ArrayList<String> m_requirements)
   {
     id = m_id;
     isMultitaskable = m_isMultitaskable;
     requirements = m_requirements;
   }
 
-  public Action(String m_id, boolean m_isMultitaskable, ArrayList<Requirement> m_requirements, ArrayList<NeedSatisfaction> m_needSatisfactions)
+  public Action(String m_id, boolean m_isMultitaskable, ArrayList<String> m_requirements, ArrayList<NeedSatisfaction> m_needSatisfactions)
   {
     id = m_id;
     isMultitaskable = m_isMultitaskable;
@@ -44,12 +44,12 @@ public class Action
     isMultitaskable = multitaskable;
   }
 
-  public ArrayList<Requirement> getRequirements()
+  public ArrayList<String> getRequirements()
   {
     return requirements;
   }
 
-  public void setRequirements(ArrayList<Requirement> requirements)
+  public void setRequirements(ArrayList<String> requirements)
   {
     this.requirements = requirements;
   }

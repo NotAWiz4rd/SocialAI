@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import Entities.Action;
 import Entities.Location;
 import Entities.Position;
-import Entities.Requirement;
 import Entities.Task;
 
 /**
@@ -14,7 +13,7 @@ import Entities.Task;
 public class TaskManager
 {
   private ArrayList<Task> tasks;
-  private ArrayList<Requirement> requirements;
+  private ArrayList<String> requirements;
   private Task currentTask;
   private ArrayList<Action> actions;
   private Position positionToBe;
@@ -46,10 +45,35 @@ public class TaskManager
 
 
   // Requirement checking happens here
+  private void checkRequirements()
+  {
+    if(actions.get(0).getRequirements() == null)
+    {
+      return;
+    }
+
+    for(int i = 0; i < actions.get(0).getRequirements().size(); i++)
+    {
+      String requ = actions.get(0).getRequirements().get(i);
+      String[] requSplit = requ.split(" ");
+
+      if(requSplit[1].contains("#"))
+      {
+        // TODO do stuff here, check for nearest suitable object
+      }
+      else if(requSplit[1].contains("$"))
+      {
+        // TODO this one might be tricky
+      }
+    }
+  }
+
   private boolean checkPosition(Position m_position, int radius) // checks if person is at required positon, sets position as positionToBe if not
   {
     boolean xInRadius = false;
     boolean yInRadius = false;
+
+    radius = radius * 5; // going from meters to pixel
 
     for(int i = -radius; i < radius; i++)
     {

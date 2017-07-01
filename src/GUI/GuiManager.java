@@ -30,7 +30,7 @@ public class GuiManager
   {
     version = m_version;
     getIconImage();
-    Startup test = new Startup(runtimeManager.personManager);
+    Startup testRun = new Startup(runtimeManager.personManager, runtimeManager.actionManager, runtimeManager.objectManager);
     runtimeManager.setChangeListener(this);
     initializeMainWindow();
     initializeDebugPanel();

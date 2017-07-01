@@ -5,6 +5,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.ToolTipManager;
 
 import Entities.Position;
 import Managers.PersonManager;
@@ -18,17 +19,21 @@ public class MainFrame
 {
   private PersonManager personManager;
   private RuntimeManager runtimeManager;
-  private JPanel[] entities;
+  private JPanel[] people;
+  private JPanel[] objects;
 
   public MainFrame(RuntimeManager m_runtimeManager)
   {
+    ToolTipManager.sharedInstance().setInitialDelay(0);
     runtimeManager = m_runtimeManager;
     personManager = runtimeManager.personManager;
     setLayout(null);
-    entities = new JPanel[personManager.getPersonCount()];
+    people = new JPanel[personManager.getPersonCount()];
+    objects = new JPanel[runtimeManager.objectManager.getObjectsCount()];
     displayButtons();
     initializeEntities();
     displayEntities();
+    displayObjects();
   }
 
   private void displayEntities()
@@ -36,7 +41,7 @@ public class MainFrame
     Position[] positions = personManager.getPeoplePositions();
     for(int i = 0; i < positions.length; i++)
     {
-      entities[i].setLocation(positions[i].getX(), positions[i].getY());
+      people[i].setLocation(positions[i].getX(), positions[i].getY());
     }
   }
 
@@ -45,14 +50,30 @@ public class MainFrame
     // TODO display environment
   }
 
+  private void displayObjects()
+  {
+    for(int i = 0; i < runtimeManager.objectManager.getObjectsCount(); i++)
+    {
+      objects[i] = new JPanel();
+      objects[i].setSize(5, 5);
+      objects[i].setBackground(Color.red);
+      objects[i].setToolTipText(runtimeManager.objectManager.getObject(i).getObjectID() + "/ " +
+                                runtimeManager.objectManager.getObject(i).getGroupID());
+      objects[i].setLocation(runtimeManager.objectManager.getObject(i).getPosition().getX(),
+                             runtimeManager.objectManager.getObject(i).getPosition().getY());
+      add(objects[i]);
+    }
+  }
+
   private void initializeEntities()
   {
     for(int i = 0; i < personManager.getPersonCount(); i++)
     {
-      entities[i] = new JPanel();
-      entities[i].setSize(3, 3);
-      entities[i].setBackground(Color.black);
-      add(entities[i]);
+      people[i] = new JPanel();
+      people[i].setSize(3, 3);
+      people[i].setBackground(Color.black);
+      people[i].setToolTipText(personManager.getPerson(i).getId() + "");
+      add(people[i]);
     }
   }
 

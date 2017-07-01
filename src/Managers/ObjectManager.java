@@ -2,6 +2,8 @@ package Managers;
 
 import java.util.ArrayList;
 
+import Entities.Object;
+
 /**
  * Created by NotAWiz4rd on 15.04.2017.
  */

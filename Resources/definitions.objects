@@ -4,24 +4,19 @@ object-groups
 }
 
 objects
-{
  {
   id: 'apple'
   group-id: 'food'
-  properties:
-  {
-   'fancy', 'playmusic'
-  }
  }
  {
   id: 'whisky'
   group-id: 'drinkable'
-  properties:
-  {
-
-  }
  }
  {
-
+  id: 'bed'
+  group-id: 'sleepspot'
  }
-}
+ {
+  id: 'The Colour of Magic by Terry Pratchett'
+  group-id: 'readable'
+ }
