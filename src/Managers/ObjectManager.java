@@ -30,4 +30,9 @@ public class ObjectManager
   {
     return objects.get(index);
   }
+
+  public ArrayList<Object> getObjects()
+  {
+    return objects;
+  }
 }

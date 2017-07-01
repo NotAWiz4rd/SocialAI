@@ -26,6 +26,7 @@ public class Startup
     objectManager = m_objectManager;
     initializeEntities();
     createEnvironment();
+    objectShoutOut();
     setTargetPostion(new Position(300, 300, 0));
   }
 
@@ -33,6 +34,14 @@ public class Startup
     throws IOException
   {
     resourceManager.loadResources(personManager, actionManager, objectManager);
+  }
+
+  private void objectShoutOut()
+  {
+    for(int i = 0; i < personManager.getPersonCount(); i++)
+    {
+      personManager.getPerson(i).setKnownObjects(objectManager.getObjects());
+    }
   }
 
   private void setTargetPostion(Position postion)

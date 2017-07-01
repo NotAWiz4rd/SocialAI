@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import Entities.Action;
 import Entities.Location;
+import Entities.Object;
+import Entities.Person;
 import Entities.Position;
 import Entities.Task;
 
@@ -19,9 +21,14 @@ public class TaskManager
   private Position positionToBe;
   private Position position;
 
-  public TaskManager(Position m_position)
+  private ArrayList<Object> knownObjects;
+  private ArrayList<Person> knownPeople;
+
+  public TaskManager(Position m_position, ArrayList<Object> m_knownObjects, ArrayList<Person> m_knownPeople)
   {
     position = m_position;
+    knownObjects = m_knownObjects;
+    knownPeople = m_knownPeople;
   }
 
   private void checkTasks()
@@ -45,11 +52,11 @@ public class TaskManager
 
 
   // Requirement checking happens here
-  private void checkRequirements()
+  private void checkRequirements() // to this every tick
   {
     if(actions.get(0).getRequirements() == null)
     {
-      return;
+      requirementsMet();
     }
 
     for(int i = 0; i < actions.get(0).getRequirements().size(); i++)
@@ -59,6 +66,16 @@ public class TaskManager
 
       if(requSplit[1].contains("#"))
       {
+        for(Object knownObject : knownObjects)
+        {
+          if(knownObject.getGroupID().equals(requSplit[1].replace("#", "")))
+          {
+            if(checkPosition(knownObject.getPosition(), Integer.parseInt(requSplit[3])))
+            {
+              requirementsMet();
+            }
+          }
+        }
         // TODO do stuff here, check for nearest suitable object
       }
       else if(requSplit[1].contains("$"))
@@ -106,7 +123,6 @@ public class TaskManager
 
   private boolean checkPerson(int id)
   {
-    // this will probably require the personManager in here...  or the runtimeManager - which would get really confusing
     // get position of the person first, then engage checkPosition-method
     return false;
   }
@@ -125,6 +141,17 @@ public class TaskManager
           tasks.set(t, temp);
         }
       }
+    }
+  }
+
+  private void requirementsMet()
+  {
+    actions.get(0).doAction();
+    actions.remove(0);
+    if(actions.size() < 1) // if there are no more actions in the current task
+    {
+      currentTask = tasks.remove(0); // start next task
+      checkRequirements();
     }
   }
 

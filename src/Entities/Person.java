@@ -22,6 +22,8 @@ public class Person
   private Attributes attributes;
   private String workplaceID; // this is the locationID for the persons workplace
   private ArrayList<Object> inventory = new ArrayList<>();
+  private ArrayList<Object> knownObjects = new ArrayList<>();
+  private ArrayList<Person> knownPeople = new ArrayList<>();
 
   private Stance stance;
 
@@ -59,7 +61,7 @@ public class Person
 
     stance = Stance.STANDING;
 
-    taskManager = new TaskManager(getPosition());
+    taskManager = new TaskManager(getPosition(), knownObjects, knownPeople);
     needManager = new NeedManager(needs, taskManager);
   }
 
@@ -276,6 +278,26 @@ public class Person
   public NeedManager getNeedManager()
   {
     return needManager;
+  }
+
+  public ArrayList<Object> getKnownObjects()
+  {
+    return knownObjects;
+  }
+
+  public void setKnownObjects(ArrayList<Object> knownObjects)
+  {
+    this.knownObjects = knownObjects;
+  }
+
+  public ArrayList<Person> getKnownPeople()
+  {
+    return knownPeople;
+  }
+
+  public void setKnownPeople(ArrayList<Person> knownPeople)
+  {
+    this.knownPeople = knownPeople;
   }
 }
 

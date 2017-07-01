@@ -7,7 +7,7 @@ import GUI.GuiManager;
  */
 public class Main
 {
-  private static String VERSION = "0.0.1";
+  private static String VERSION = "0.0.2 indev";
 
   public static void main(String[] args)
   {
