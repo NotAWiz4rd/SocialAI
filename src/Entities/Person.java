@@ -81,7 +81,7 @@ public class Person
     return -1;
   }
 
-  public void move()
+  public void move(int mapWidth, int mapHeight)
   {
     // 5px = 1m?
 
@@ -150,6 +150,24 @@ public class Person
     {
       x += random.nextGaussian() * 5;
       y += random.nextGaussian() * 5;
+    }
+
+    if(x < 0)
+    {
+      x = 0;
+    }
+    else if(x > mapWidth)
+    {
+      x = mapWidth;
+    }
+
+    if(y < 0)
+    {
+      y = 0;
+    }
+    else if(y > mapHeight)
+    {
+      y = mapHeight;
     }
 
     setPosition(x, y, getPosition().getZ());

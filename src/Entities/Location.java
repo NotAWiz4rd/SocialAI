@@ -11,8 +11,6 @@ public class Location
   private int[] y;
   private int z;
 
-  // TODO define this as a proper Location, e.g. a school or a shop. Also give it a groupID, for shops and co
-
   public Location(String m_id, int[] m_x, int[] m_y, int m_z)
   {
     id = m_id;

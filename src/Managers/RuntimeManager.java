@@ -14,7 +14,9 @@ public class RuntimeManager
   // this class runs the simulation in ticks. It makes sure everything gets updated properly
   // 1 tick = 1 second
 
-  public PersonManager personManager = new PersonManager();
+  private final int mapHeight = 1000;
+  private final int mapWidth = 1000;
+  public PersonManager personManager = new PersonManager(mapWidth, mapHeight);
   public ObjectManager objectManager = new ObjectManager();
   public ActionManager actionManager = new ActionManager();
   private ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
@@ -63,5 +65,15 @@ public class RuntimeManager
   public void setChangeListener(ChangeListener m_listener)
   {
     listener = m_listener;
+  }
+
+  public int getMapHeight()
+  {
+    return mapHeight;
+  }
+
+  public int getMapWidth()
+  {
+    return mapWidth;
   }
 }

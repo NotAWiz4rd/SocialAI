@@ -18,8 +18,13 @@ public class PersonManager
 
   private final int DECREASE_TICK = 10;
 
-  public PersonManager()
+  private int mapWidth;
+  private int mapHeight;
+
+  public PersonManager(int m_mapWidth, int m_mapHeight)
   {
+    mapWidth = m_mapWidth;
+    mapHeight = m_mapHeight;
   }
 
   public void addPerson(Person person)
@@ -53,7 +58,7 @@ public class PersonManager
   {
     for(Person person : people)
     {
-      person.move();
+      person.move(mapWidth, mapHeight);
     }
   }
 
