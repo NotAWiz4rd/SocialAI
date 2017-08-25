@@ -59,12 +59,21 @@ public class DebugPanel
     int y = 0;
     for(int i = 0; i < personCount; i++)
     {
+      Person person = personManager.getPerson(i);
       panels[i] = new JPanel();
-      idPanels[i] = new JLabel("ID: " + personManager.getPerson(i).getId());
-      namePanels[i] = new JLabel("Name: " + personManager.getPerson(i).getName());
-      positionPanels[i] = new JLabel("Position: " + personManager.getPerson(i).getPosition().getX() + " "
-                                     + personManager.getPerson(i).getPosition().getY() + " " + personManager.getPerson(i).getPosition().getZ());
-      actionPanels[i] = new JLabel("Current Action: " + "Chilling");
+      idPanels[i] = new JLabel("ID: " + person.getId());
+      namePanels[i] = new JLabel("Name: " + person.getName());
+      positionPanels[i] = new JLabel("Position: " + person.getPosition().getX() + " "
+                                     + person.getPosition().getY() + " " + person.getPosition().getZ());
+      actionPanels[i] = new JLabel();
+      if(person.getTaskManager().getActions() != null)
+      {
+        actionPanels[i].setText("Current Action: " + person.getTaskManager().getActions().get(0).getId());
+      }
+      else
+      {
+        actionPanels[i].setText("Current Action: " + "Nothing");
+      }
       panels[i].setSize(500, ENTRYHEIGHT);
       panels[i].setLocation(0, y);
       panels[i].add(idPanels[i]);
@@ -94,7 +103,14 @@ public class DebugPanel
 
       positionPanels[i].setText("Position: " + person.getPosition().getX() + " "
                                 + person.getPosition().getY() + " " + person.getPosition().getZ());
-      actionPanels[i].setText("Current Action: " + "Chilling");
+      if(person.getTaskManager().getActions() != null)
+      {
+        actionPanels[i].setText("Current Action: " + person.getTaskManager().getActions().get(0).getId());
+      }
+      else
+      {
+        actionPanels[i].setText("Current Action: " + "Nothing");
+      }
 
       StringBuilder needsString = new StringBuilder();
       for(int t = 0; t < person.getNeeds().size(); t++)

@@ -31,7 +31,7 @@ public class Action
 
   public void doAction()
   {
-
+    System.out.println(id + " was performed!"); // TODO remove this; only for testing purposes
   }
 
   public boolean isMultitaskable()

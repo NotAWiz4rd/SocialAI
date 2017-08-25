@@ -6,6 +6,7 @@ import java.util.Random;
 
 import Enums.Sex;
 import Enums.Stance;
+import Managers.ActionManager;
 import Managers.NeedManager;
 import Managers.TaskManager;
 
@@ -33,7 +34,7 @@ public class Person
   private ArrayList<Need> needs; // stores needs with their value
   private TaskManager taskManager;
   private NeedManager needManager;
-
+  private ActionManager actionManager;
 
   public Person(int m_id, String m_name, String m_sex, int m_age, int m_height, String m_workplaceID, int[] m_attributes,
                 ArrayList<Property> m_hasProperties, ArrayList<Opinion> m_likesProperties, ArrayList<Opinion> m_dislikesProperties,
@@ -60,9 +61,6 @@ public class Person
     attributes = new Attributes(m_attributes[0], m_attributes[1], m_attributes[2], m_attributes[3], m_attributes[4]);
 
     stance = Stance.STANDING;
-
-    taskManager = new TaskManager(getPosition(), knownObjects, knownPeople);
-    needManager = new NeedManager(needs, taskManager);
   }
 
   public int getCurrentSize()
@@ -103,7 +101,7 @@ public class Person
         int yToGo = taskManager.getPositionToBe().getY() - y;
 
 
-        switch(doStuff(xToGo, yToGo))
+        switch(evaluateOptions(xToGo, yToGo))
         {
           case 1:
             x += steps / 2;
@@ -192,7 +190,7 @@ public class Person
     needManager.evaluateNeeds();
   }
 
-  private int doStuff(int toGo1, int toGo2)
+  private int evaluateOptions(int toGo1, int toGo2)
   {
     if(toGo1 > 0 && toGo2 > 0)
     {
@@ -306,6 +304,8 @@ public class Person
   public void setKnownObjects(ArrayList<Object> knownObjects)
   {
     this.knownObjects = knownObjects;
+    taskManager = new TaskManager(getPosition(), this.knownObjects, knownPeople);
+
   }
 
   public ArrayList<Person> getKnownPeople()
@@ -316,6 +316,13 @@ public class Person
   public void setKnownPeople(ArrayList<Person> knownPeople)
   {
     this.knownPeople = knownPeople;
+  }
+
+  public void setActionManager(ActionManager actionManager)
+  {
+    this.actionManager = actionManager;
+    needManager = new NeedManager(needs, taskManager, this.actionManager);
+
   }
 }
 

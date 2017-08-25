@@ -20,11 +20,15 @@ public class PersonManager
 
   private int mapWidth;
   private int mapHeight;
+  private ActionManager actionManager;
 
-  public PersonManager(int m_mapWidth, int m_mapHeight)
+  private boolean setActionManager = false;
+
+  public PersonManager(int m_mapWidth, int m_mapHeight, ActionManager m_actionManager)
   {
     mapWidth = m_mapWidth;
     mapHeight = m_mapHeight;
+    actionManager = m_actionManager;
   }
 
   public void addPerson(Person person)
@@ -75,8 +79,21 @@ public class PersonManager
 
   public void simulatePeople()
   {
+    if(!setActionManager)
+    {
+      setActionManager();
+    }
+
     tickCount++;
     movePeople();
     decreaseNeeds();
+  }
+
+  private void setActionManager()
+  {
+    for(Person person : people)
+    {
+      person.setActionManager(actionManager);
+    }
   }
 }

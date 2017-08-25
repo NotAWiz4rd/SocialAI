@@ -27,7 +27,7 @@ public class Startup
     initializeEntities();
     createEnvironment();
     objectShoutOut();
-    //setTargetPostion(new Position(300, 300, 0));
+    //TODO Test setTargetPostion(new Position(300, 300, 0));
   }
 
   private void initializeEntities()

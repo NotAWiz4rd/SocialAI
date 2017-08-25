@@ -1,16 +1,16 @@
 {
- id: 'Fun'
+ id: 'fun'
  description: 'Represents the general fun-level of a person. A person gets grumpy if their fun is too low.'
 }
 {
- id: 'Hunger'
+ id: 'hunger'
  description: 'When this is low a person has to eat stuff.'
 }
 {
- id: 'Thirst'
+ id: 'thirst'
  description: 'When this is low a person has to drink stuff.'
 }
 {
- id: 'Sleep'
+ id: 'sleep'
  description: 'An obvious one, isnt it?'
 }

@@ -14,7 +14,7 @@ import Entities.Task;
  */
 public class TaskManager
 {
-  private ArrayList<Task> tasks;
+  private ArrayList<Task> tasks = new ArrayList<>();
   private ArrayList<String> requirements;
   private Task currentTask;
   private ArrayList<Action> actions;
@@ -35,13 +35,22 @@ public class TaskManager
   {
     // check tasks for priorities and order them correctly, eventually start first task
     sortTasks();
-    if(currentTask.isFinished())
+    if(currentTask == null && tasks.size() > 0)
     {
       currentTask = tasks.remove(0);
     }
+    else if(currentTask != null)
+    {
+      if(currentTask.isFinished())
+      {
+        currentTask = tasks.remove(0);
+      }
 
-    actions = currentTask.getAction();
-    requirements = actions.get(0).getRequirements();
+      actions = currentTask.getAction();
+      requirements = actions.get(0).getRequirements();
+
+      checkRequirements();
+    }
   }
 
   public void addTask(Task task)
@@ -52,7 +61,7 @@ public class TaskManager
 
 
   // Requirement checking happens here
-  private void checkRequirements() // to this every tick
+  private void checkRequirements() // do this every tick
   {
     if(actions.get(0).getRequirements() == null)
     {
@@ -76,11 +85,10 @@ public class TaskManager
             }
           }
         }
-        // TODO do stuff here, check for nearest suitable object
       }
       else if(requSplit[1].contains("$"))
       {
-        // TODO this one might be tricky
+        // TODO this one might be tricky, but wait for location first
       }
     }
   }
@@ -118,6 +126,7 @@ public class TaskManager
 
   private boolean checkLocation(Location location)
   {
+    // TODO check here if the position of the person is within the location-defining points
     return false;
   }
 
@@ -155,6 +164,16 @@ public class TaskManager
     }
   }
 
+  public Task getCurrentTask()
+  {
+    return currentTask;
+  }
+
+  public ArrayList<Action> getActions()
+  {
+    return actions;
+  }
+
   public Position getPositionToBe()
   {
     return positionToBe;
@@ -163,5 +182,10 @@ public class TaskManager
   public void setPositionToBe(Position positionToBe)
   {
     this.positionToBe = positionToBe;
+  }
+
+  public ArrayList<Task> getTasks()
+  {
+    return tasks;
   }
 }

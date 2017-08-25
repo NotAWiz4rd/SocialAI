@@ -20,3 +20,11 @@ objects
   id: 'The Colour of Magic by Terry Pratchett'
   group-id: 'readable'
  }
+ {
+  id: 'Die Götterkriege by Richard Schwartz'
+  group-id: 'readable'
+ }
+ {
+  id: 'Mathe für Anfänger'
+  group-id: 'readable'
+ }
