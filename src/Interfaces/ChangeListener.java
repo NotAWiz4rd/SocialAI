@@ -1,9 +1,8 @@
 package Interfaces;
 
 /**
- * Created by notawiz4rd on 26.06.17.
+ * @author Max Werner
  */
-public interface ChangeListener
-{
-  public void onChangeHappened();
+public interface ChangeListener {
+    public void onChangeHappened();
 }

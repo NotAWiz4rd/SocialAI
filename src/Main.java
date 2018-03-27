@@ -1,23 +1,18 @@
-import java.io.IOException;
-
 import GUI.GuiManager;
 
-/**
- * Created by notawiz4rd on 26/03/2017.
- */
-public class Main
-{
-  private static String VERSION = "0.0.2 indev";
+import java.io.IOException;
 
-  public static void main(String[] args)
-  {
-    try
-    {
-      GuiManager guiManager = new GuiManager(VERSION);
+/**
+ * @author Max Werner
+ */
+public class Main {
+    private static String VERSION = "0.0.2 indev";
+
+    public static void main(String[] args) {
+        try {
+            GuiManager guiManager = new GuiManager(VERSION);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    catch(IOException e)
-    {
-      e.printStackTrace();
-    }
-  }
 }

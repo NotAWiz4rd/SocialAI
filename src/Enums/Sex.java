@@ -1,5 +1,5 @@
 package Enums;
 
-public enum Sex{
-  MALE, FEMALE
+public enum Sex {
+    MALE, FEMALE
 }

@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 import Interfaces.ChangeListener;
 
 /**
- * Created by NotAWiz4rd on 15.04.2017.
+ * @author Max Werner
  */
 public class RuntimeManager
 {
