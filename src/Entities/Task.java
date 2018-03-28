@@ -3,6 +3,8 @@ package Entities;
 import java.util.ArrayList;
 
 /**
+ * Represents an executable task, which is constructed of one or more actions.
+ *
  * @author Max Werner
  */
 public class Task {

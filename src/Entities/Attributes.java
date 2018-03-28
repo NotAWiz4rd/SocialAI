@@ -1,6 +1,8 @@
 package Entities;
 
 /**
+ * Represents the basic attributes of a person.
+ *
  * @author Max Werner
  */
 public class Attributes {

@@ -11,26 +11,39 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
+ * Manages loading of all resources. Loads objects from their respective files and registers them in their respective
+ * managers.
+ *
  * @author Max Werner
  */
 public class ResourceManager {
-    private String actionsFile = "Resources/definitions.actions";
-    private String locationsFile = "Resources/definitions.locations";
-    private String needsFile = "Resources/definitions.needs";
-    private String objectsFile = "Resources/definitions.objects";
-    private String peopleFile = "Resources/definitions.people";
+    // resource file locations
+    private static String actionsFile = "Resources/definitions.actions";
+    private static String locationsFile = "Resources/definitions.locations";
+    private static String needsFile = "Resources/definitions.needs";
+    private static String objectsFile = "Resources/definitions.objects";
+    private static String peopleFile = "Resources/definitions.people";
 
-    private PersonManager personManager;
-    private ActionManager actionManager;
-    private ObjectManager objectManager;
-    private ArrayList<Need> needArray = new ArrayList<>();
-    private Random random = new Random();
+    private static PersonManager personManager;
+    private static ActionManager actionManager;
+    private static ObjectManager objectManager;
+    private static ArrayList<Need> needArray = new ArrayList<>();
 
-    public ResourceManager() {
+    // TODO get this from elsewhere
+    private static final int mapWidth = 1000;
+    private static final int mapHeight = 1000;
 
-    }
+    private static Random random = new Random();
 
-    public void loadResources(PersonManager m_personManager, ActionManager m_actionManager, ObjectManager m_objectManager)
+    /**
+     * Loads all resources from their respective files into the Managers.
+     *
+     * @param m_personManager PersonManager to load all people into.
+     * @param m_actionManager ActionsManager to load all actions into.
+     * @param m_objectManager ObjectManager to load all objects into.
+     * @throws IOException
+     */
+    public static void loadResources(PersonManager m_personManager, ActionManager m_actionManager, ObjectManager m_objectManager)
             throws IOException {
         personManager = m_personManager;
         actionManager = m_actionManager;
@@ -42,11 +55,16 @@ public class ResourceManager {
         loadPeople();
     }
 
-    private void loadLocations() {
-
+    private static void loadLocations() {
+        // TODO implement me
     }
 
-    private void loadObjects()
+    /**
+     * Loads objects from the provided objectfile and puts them into the ObjectManager.
+     *
+     * @throws IOException
+     */
+    private static void loadObjects()
             throws IOException {
         String objectsEncrypted = readFile(objectsFile);
 
@@ -63,7 +81,12 @@ public class ResourceManager {
         }
     }
 
-    private void loadActions()
+    /**
+     * Loads actions from the provided objectfile and registers them in the ActionManager.
+     *
+     * @throws IOException
+     */
+    private static void loadActions()
             throws IOException {
         String actionsEncrypted = readFile(actionsFile);
 
@@ -107,7 +130,12 @@ public class ResourceManager {
         }
     }
 
-    private void loadNeeds()
+    /**
+     * Loads needs from provided needsfile and adds them to the local needArray.
+     *
+     * @throws IOException
+     */
+    private static void loadNeeds()
             throws IOException {
         String needsEncrypted = readFile(needsFile);
 
@@ -121,7 +149,13 @@ public class ResourceManager {
         }
     }
 
-    private void loadPeople()
+    /**
+     * Loads people from provided peopleFile and registers them in the PersonManager at a random location within the
+     * mapBounds.
+     *
+     * @throws IOException
+     */
+    private static void loadPeople()
             throws IOException {
         String peopleEncrypted = readFile(peopleFile);
 
@@ -181,20 +215,31 @@ public class ResourceManager {
             }
 
             // place entities at random location within 999/999
-
             Person person = new Person(id, name, sex, age, height, workplace, attributes, hasProperties, likesProperties,
-                    dislikesProperties, needArray, new Position(random.nextInt(1000), random.nextInt(1000), 0));
+                    dislikesProperties, needArray, new Position(random.nextInt(mapWidth), random.nextInt(mapHeight), 0));
             personManager.addPerson(person);
         }
     }
 
-    private String readFile(String filename)
+    /**
+     * Reads a file and returns its content as String.
+     *
+     * @param filename Filename of the file to read.
+     * @return File contents as String.
+     * @throws IOException
+     */
+    private static String readFile(String filename)
             throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(filename));
         return new String(encoded, Charset.defaultCharset());
     }
 
-    private int generateNeedValue() {
-        return random.nextInt(50) + 50; // value from 50 to 99
+    /**
+     * Generates a random needStartingValue (int) between 50 and 99.
+     *
+     * @return
+     */
+    private static int generateNeedValue() {
+        return random.nextInt(50) + 50;
     }
 }

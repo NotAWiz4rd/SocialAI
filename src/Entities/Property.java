@@ -1,6 +1,8 @@
 package Entities;
 
 /**
+ * Represents a property.
+ *
  * @author Max Werner
  */
 public class Property {

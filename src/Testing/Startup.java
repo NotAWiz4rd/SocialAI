@@ -9,6 +9,9 @@ import Managers.ResourceManager;
 import java.io.IOException;
 
 /**
+ * This is a class for testing the simulation. It sets up everything.
+ * As this is a temporary class which will be removed later, it will not be documented further.
+ *
  * @author Max Werner
  */
 public class Startup {

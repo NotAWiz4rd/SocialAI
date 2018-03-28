@@ -1,79 +1,86 @@
 package Managers;
 
+import Interfaces.ChangeListener;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import Interfaces.ChangeListener;
-
 /**
+ * Manages the overall simulation (in ticks) and makes sure everything gets updated properly.
+ *
  * @author Max Werner
  */
-public class RuntimeManager
-{
-  // this class runs the simulation in ticks. It makes sure everything gets updated properly
-  // 1 tick = 1 second
+public class RuntimeManager {
 
-  private final int mapHeight = 1000;
-  private final int mapWidth = 1000;
-  public ObjectManager objectManager = new ObjectManager();
-  public ActionManager actionManager = new ActionManager();
-  public PersonManager personManager = new PersonManager(mapWidth, mapHeight, actionManager);
-  private ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-  private long speed = 250; // 1000 = 1 tick per second
-  private ChangeListener listener;
+    private long tickLength = 250; // Time of one tick in milliseconds
 
-  private boolean isRunning = true;
+    // Dimensions of the map
+    private final int mapHeight = 1000;
+    private final int mapWidth = 1000;
 
-  public RuntimeManager()
-  {
-  }
+    // general managers
+    public ObjectManager objectManager = new ObjectManager();
+    public ActionManager actionManager = new ActionManager();
+    public PersonManager personManager = new PersonManager(mapWidth, mapHeight, actionManager);
 
-  private void run()
-  {
-    scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-    scheduledExecutorService.scheduleAtFixedRate(this::simulateTick, 0, speed, TimeUnit.MILLISECONDS);
-  }
+    // other stuff
+    private ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+    private ChangeListener listener;
 
-  public void start()
-  {
-    isRunning = true;
-    run();
-  }
+    private boolean isRunning = true;
 
-  public void stop()
-  {
-    isRunning = false;
-    scheduledExecutorService.shutdown();
-  }
-
-  private void simulateTick()
-  {
-    personManager.simulatePeople();
-
-    if(listener != null)
-    {
-      listener.onChangeHappened(); // notify GuiManager to reload; this is just for testing in our GUI
+    public RuntimeManager() {
     }
-  }
 
-  public void setSpeed(int newSpeed)
-  {
-    speed = newSpeed; // 500 double speed, 250 quadruple speed
-  }
+    /**
+     * Executes the simulateTick-function every x (x = tickLength variable) milliseconds.
+     */
+    private void run() {
+        scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+        scheduledExecutorService.scheduleAtFixedRate(this::simulateTick, 0, tickLength, TimeUnit.MILLISECONDS);
+    }
 
-  public void setChangeListener(ChangeListener m_listener)
-  {
-    listener = m_listener;
-  }
+    /**
+     * Starts the simulation.
+     */
+    public void start() {
+        isRunning = true;
+        run();
+    }
 
-  public int getMapHeight()
-  {
-    return mapHeight;
-  }
+    /**
+     * Stops the simulation.
+     */
+    public void stop() {
+        isRunning = false;
+        scheduledExecutorService.shutdown();
+    }
 
-  public int getMapWidth()
-  {
-    return mapWidth;
-  }
+    /**
+     * Steps forward one tick by having all people simulated and calling the GUI to reload.
+     */
+    private void simulateTick() {
+        personManager.simulatePeople();
+
+        if (listener != null) {
+            listener.onChangeHappened(); // notify GuiManager to reload; this is just for testing in our GUI
+        }
+    }
+
+    public void setTickLength(int newSpeed) {
+        tickLength = newSpeed;
+    }
+
+    public void setChangeListener(ChangeListener m_listener) {
+        listener = m_listener;
+    }
+
+    public int getMapHeight() {
+        return mapHeight;
+    }
+
+    public int getMapWidth() {
+        return mapWidth;
+    }
 }

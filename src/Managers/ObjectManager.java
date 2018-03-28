@@ -5,6 +5,8 @@ import Entities.Object;
 import java.util.ArrayList;
 
 /**
+ * Manages all objects in the simulation.
+ *
  * @author Max Werner
  */
 public class ObjectManager {

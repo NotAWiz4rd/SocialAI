@@ -1,6 +1,8 @@
 package Entities;
 
 /**
+ * Represents an event in the simulation.
+ *
  * @author Max Werner
  */
 public class Event {

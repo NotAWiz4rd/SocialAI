@@ -1,6 +1,8 @@
 package Entities;
 
 /**
+ * Represents the satisfaction of a need (1-100). The need is identified via its id.
+ *
  * @author Max Werner
  */
 public class NeedSatisfaction {

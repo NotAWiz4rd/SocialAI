@@ -25,8 +25,10 @@ public class TaskManager {
         knownPeople = m_knownPeople;
     }
 
+    /**
+     * Checks tasks for priorities, orders them correctly and starts first task if needed.
+     */
     private void checkTasks() {
-        // check tasks for priorities and order them correctly, eventually start first task
         sortTasks();
         if (currentTask == null && tasks.size() > 0) {
             currentTask = tasks.remove(0);
@@ -42,15 +44,20 @@ public class TaskManager {
         }
     }
 
+    /**
+     * Adds a task to the manager and calls checkTasks.
+     *
+     * @param task Task to add.
+     */
     public void addTask(Task task) {
         tasks.add(task);
         checkTasks();
     }
 
-
-    // Requirement checking happens here
-    private void checkRequirements() // do this every tick
-    {
+    /**
+     * Checks requirements of actions every tick.
+     */
+    private void checkRequirements() {
         if (actions.get(0).getRequirements() == null) {
             requirementsMet();
         }
@@ -73,6 +80,13 @@ public class TaskManager {
         }
     }
 
+    /**
+     * Checks if the person is at the given position, sets it as positionToBe if this is not the case.
+     *
+     * @param m_position Position to check against.
+     * @param radius     Radius in which the person has to be.
+     * @return Whether the person is within the radius of the given position.
+     */
     private boolean checkPosition(Position m_position, int radius) // checks if person is at required positon, sets position as positionToBe if not
     {
         boolean xInRadius = false;
@@ -98,16 +112,32 @@ public class TaskManager {
         }
     }
 
+    /**
+     * Checks whether a person is within a given location.
+     *
+     * @param location Location to check against.
+     * @return Whether the person is at(within) the given location.
+     */
     private boolean checkLocation(Location location) {
         // TODO check here if the position of the person is within the location-defining points
         return false;
     }
 
+    /**
+     * Checks whether the person is next to the given person (via id).
+     *
+     * @param id ID of the person to check against.
+     * @return Whether the person is next to a given person.
+     */
     private boolean checkPerson(int id) {
         // get position of the person first, then engage checkPosition-method
+        // TODO implement me
         return false;
     }
 
+    /**
+     * Sorts tasks by priority (higher priority first).
+     */
     private void sortTasks() {
         Task temp;
         for (int i = 0; i < tasks.size(); i++) {
@@ -121,6 +151,9 @@ public class TaskManager {
         }
     }
 
+    /**
+     * Calls the requirement checking for the action that is to be done next.
+     */
     private void requirementsMet() {
         actions.get(0).doAction();
         actions.remove(0);

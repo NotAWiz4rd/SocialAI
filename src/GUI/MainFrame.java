@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * The Mainframe is the main simulation window. The simulation can be oberserved and started/paused here.
+ *
  * @author Max Werner
  */
 public class MainFrame

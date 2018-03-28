@@ -11,6 +11,8 @@ import java.util.Objects;
 import java.util.Random;
 
 /**
+ * Represents a simulatable person within the simulation. A Person is the most complex entity in the simulation.
+ *
  * @author Max Werner
  */
 public class Person

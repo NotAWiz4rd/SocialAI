@@ -9,10 +9,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
+ * this is a side panel to the MainFrame where all entities are shown. They show all info on click in a new window.
+ *
  * @author Max Werner
  */
 
-// this is a side panel to the MainFrame where all entities are shown. They show all info on click (maybe in a new window?)
 public class DebugPanel
         extends JFrame {
     private PersonManager personManager;

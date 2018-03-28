@@ -1,6 +1,9 @@
 package Entities;
 
 /**
+ * Represents a multi-dimensional location, which has an id, groupID, several x and y coordinates as well as a z
+ * coordinate.
+ *
  * @author Max Werner
  */
 public class Location {

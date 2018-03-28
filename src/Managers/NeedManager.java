@@ -6,10 +6,11 @@ import Entities.Task;
 import java.util.ArrayList;
 
 /**
+ * Manages whether and which tasks are to be issued based on the input of the person and its circumstances
+ *
  * @author Max Werner
  */
-public class NeedManager // this manager decides whether and which tasks are to be issued based on the input of the person and the circumstances
-{
+public class NeedManager {
     private ArrayList<Need> needs;
     private TaskManager taskManager;
     private ActionManager actionManager;
@@ -22,6 +23,9 @@ public class NeedManager // this manager decides whether and which tasks are to 
         tasks = new Task[needs.size()];
     }
 
+    /**
+     * Evaluates the given needs and issues tasks via the TaskManager accordingly.
+     */
     public void evaluateNeeds() {
         // have a look at needs and evaluate which tasks should be issued at which priority
         for (int i = 0; i < needs.size(); i++) {

@@ -3,6 +3,8 @@ package Entities;
 import java.util.ArrayList;
 
 /**
+ * Represents an executable action. This actions can have needSatisfaction, requirements and might be multitaskable.
+ *
  * @author Max Werner
  */
 public class Action {

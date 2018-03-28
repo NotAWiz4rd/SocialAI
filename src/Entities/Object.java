@@ -1,6 +1,8 @@
 package Entities;
 
 /**
+ * Represents an (interactable) object within the simulation.
+ *
  * @author Max Werner
  */
 public class Object

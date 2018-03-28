@@ -10,10 +10,11 @@ import java.io.IOException;
 import java.net.URL;
 
 /**
+ * This is the base class from where the GUI is managed.
+ *
  * @author Max Werner
  */
 
-// This is the Base Class from where the GUI is managed
 public class GuiManager
         implements ChangeListener {
     private MainFrame mainFrame;

@@ -6,6 +6,8 @@ import Entities.NeedSatisfaction;
 import java.util.ArrayList;
 
 /**
+ * This Manager manages all available actions.
+ *
  * @author Max Werner
  */
 public class ActionManager {
@@ -15,14 +17,12 @@ public class ActionManager {
 
     }
 
-    public void addAction(Action action) {
-        actions.add(action);
-    }
-
-    public ArrayList<Action> getActions() {
-        return actions;
-    }
-
+    /**
+     * Searches for an available action that satisfies the given need the most.
+     *
+     * @param needId Need to be satisfied.
+     * @return Action which satisfies the given need the most.
+     */
     public Action searchForNeedSatisfaction(String needId) {
         int f = 0;
         int satisfaction = 0;
@@ -41,5 +41,13 @@ public class ActionManager {
         }
 
         return actions.get(f);
+    }
+
+    public void addAction(Action action) {
+        actions.add(action);
+    }
+
+    public ArrayList<Action> getActions() {
+        return actions;
     }
 }

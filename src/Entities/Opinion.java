@@ -1,12 +1,15 @@
 package Entities;
 
 /**
+ * Represents an opinion, which people have over a certain property, with the personalLevel of the opinion included.
+ *
  * @author Max Werner
  */
 public class Opinion {
     private Property property;
     private int impact;  // how much the opinion effects the general opinion of someone
-    private int personalLevel;  // how likely a person will share this opinion
+    private int personalLevel;  // how likely a person will share this opinion, between 0 and 100, where 100 is really
+    // personal (people will noone about this opinion.
 
     public Opinion(Property m_property, int m_impact, int m_personalLevel) {
         property = m_property;

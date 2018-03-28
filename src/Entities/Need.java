@@ -1,6 +1,8 @@
 package Entities;
 
 /**
+ * Represents the need of a person (e.g. hunger).
+ *
  * @author Max Werner
  */
 public class Need {

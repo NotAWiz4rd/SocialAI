@@ -1,9 +1,9 @@
 package Environment;
 
 /**
+ * Represents the environment in which all entities are simulated.
+ *
  * @author Max Werner
  */
-
-// this class represents the Environment in which all entities are simulated
 public class Environment {
 }

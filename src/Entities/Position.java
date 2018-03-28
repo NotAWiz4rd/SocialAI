@@ -1,6 +1,8 @@
 package Entities;
 
 /**
+ * Represents a three-dimensional position.
+ *
  * @author Max Werner
  */
 public class Position {

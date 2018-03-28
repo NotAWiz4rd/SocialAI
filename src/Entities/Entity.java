@@ -1,6 +1,8 @@
 package Entities;
 
 /**
+ * Represents a basic entity (e.g. Object, Person,...) with an id and a positon.
+ *
  * @author Max Werner
  */
 
